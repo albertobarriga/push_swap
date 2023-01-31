@@ -23,8 +23,10 @@ int main(int argc, char **argv)
 	}
 }
 
-int	init_stack(int argc, char **argv, t_stack)
+int	init_stack(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
 {
+	size_t	stack_size;
+	
 	stack_size = lenght_stack(argc, argv);
 	if (!stack_a->string = malloc(sizeof(int) * stack_size))
 		return (ERROR);
@@ -33,6 +35,9 @@ int	init_stack(int argc, char **argv, t_stack)
 		free(stack_a->string);
 		return (ERROR);
 	}
+	stack_a->max_size = stack_size;
+	stack_b->max_size = stack_size;
+	stack_a->size
 }
 
 size_t	lenght_stack(int argc, char **argv)
