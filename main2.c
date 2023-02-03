@@ -9,13 +9,17 @@ int main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	i = argc;
-	if (argc >= 2)
+	if (argc > 2)
 	{
 		while (i > 1)
 		{
 			ft_init_stacks(&stack_a, ft_atoi(argv[i - 1]));
 			i--;
 		}
+	}
+	else if (argc == 2)
+	{
+		ft_stack_string(argv, &stack_a);
 	}
 	print_list(stack_a);
 }
@@ -35,8 +39,6 @@ t_stack	*ft_init_stacks(t_stack **first, int value)
 
 void	print_list(t_stack *first)
 {
-	
-
 	while (first->next)
 	{
 
@@ -57,7 +59,7 @@ int	ft_atoi(const char *str)
 	res = 0;
 	i = 0;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-	i++;
+		i++;
 	// if (!(str[i] >= '0' && str[i] <= '9' && str[i] == '-'))
 	// {
 	// 	return (0);
@@ -75,4 +77,9 @@ int	ft_atoi(const char *str)
 	}
 	res = res * s;
 	return (res);
+}
+
+int	ft_stack_string (char **argv, t_stack **stack_a)
+{
+	
 }
