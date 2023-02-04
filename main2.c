@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main2.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
+/*   Updated: 2023/02/04 17:06:26 by abarriga         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack		*stack_a;
 	t_stack		*stack_b;
+	t_arg		info;
 	int			i;
 
 	stack_a = NULL;
@@ -19,7 +32,7 @@ int main(int argc, char **argv)
 	}
 	else if (argc == 2)
 	{
-		ft_stack_string(argv, &stack_a);
+		ft_stack_string(argv, &stack_a, &info);
 	}
 	print_list(stack_a);
 }
@@ -41,45 +54,30 @@ void	print_list(t_stack *first)
 {
 	while (first->next)
 	{
-
 		printf("imprime  %i\n", first->value);
-		
 		first = first->next;
 	}
 	printf("imprime  %i\n", first->value);
 }
 
-int	ft_atoi(const char *str)
+void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info)
 {
-	int	s;
-	int	res;
-	int	i;
-
-	s = 1;
-	res = 0;
-	i = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	// if (!(str[i] >= '0' && str[i] <= '9' && str[i] == '-'))
-	// {
-	// 	return (0);
-	// }
-	if (str[i] == '+' || str[i] == '-')
+	info->split_values = ft_split(argv[1], ' ');
+	info->max_size = ft_count_arg(info) - 1;
+	info->i = info->max_size;
+	while (info->i >= 0)
 	{
-		if (str[i] == '-')
-			s = s * (-1);
-		i++;
+		ft_init_stacks(stack_a, ft_atoi(info->split_values[info->i]));
+		info->i--;
 	}
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	res = res * s;
-	return (res);
 }
 
-int	ft_stack_string (char **argv, t_stack **stack_a)
+int	ft_count_arg(t_arg	*info)
 {
-	
+	int		i;
+
+	i = 0;
+	while (info->split_values[i])
+		i++;
+	return (i);
 }
