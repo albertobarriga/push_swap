@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:17:11 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/05 18:14:38 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/05 18:48:51 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_check_arg(char **argv, int argc, t_arg *info)
 {
 	if (argc < 2)
-		exit(-1);
+		ft_error();
 	else if (argc == 2)
 	{
 		info->split_values = ft_split(argv[1], ' ');
@@ -35,13 +35,15 @@ void	ft_check_duplicate_string(t_arg	*info)
 	int i;
 
 	i = 0;
+	if (info->max_size == 0)
+		ft_error();
 	while (info->split_values[i])
 	{
 		j = 0;
 		while (info->split_values[j])
 		{
 			if (ft_atol(info->split_values[i]) == ft_atol(info->split_values[j]) && j != i)
-				exit(-1);
+				ft_error();
 			j++;
 		}
 		i++;
@@ -60,7 +62,7 @@ void	ft_check_duplicate_args(char **argv)
 		while (argv[j])
 		{
 			if (ft_atol(argv[i]) == ft_atol(argv[j]) && j != i)
-				exit(-1);
+				ft_error();
 			j++;
 		}
 		i++;
