@@ -1,18 +1,17 @@
 int main(int argc, char **argv)
 {
-	int	i;
-	char *a;
+	int		i;
+	char	*a;
 
-	if (argc < 1)
+	if (argc < 2)
 	{
-		return(0);
+		return (0);
 	}
-	if ()
+	if (argc == 2)
 	{
 		init_stack();
 	}
-	else if (init_stack())
-	i = 0;
+	if (argc > 2)
 	while (i < argc)
 	{
 		lst->content = ft_atoi(argv[i + 1])

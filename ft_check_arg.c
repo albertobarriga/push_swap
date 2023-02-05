@@ -1,0 +1,68 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_arg.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/05 17:17:11 by abarriga          #+#    #+#             */
+/*   Updated: 2023/02/05 18:14:38 by abarriga         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	ft_check_arg(char **argv, int argc, t_arg *info)
+{
+	if (argc < 2)
+		exit(-1);
+	else if (argc == 2)
+	{
+		info->split_values = ft_split(argv[1], ' ');
+		info->max_size = ft_count_arg(info) - 1;
+		info->i = info->max_size;
+		ft_check_duplicate_string(info);
+	}
+	else
+	{
+		ft_check_duplicate_args(argv);
+	}
+}
+
+void	ft_check_duplicate_string(t_arg	*info)
+{
+	int	j;
+	int i;
+
+	i = 0;
+	while (info->split_values[i])
+	{
+		j = 0;
+		while (info->split_values[j])
+		{
+			if (ft_atol(info->split_values[i]) == ft_atol(info->split_values[j]) && j != i)
+				exit(-1);
+			j++;
+		}
+		i++;
+	}
+}
+
+void	ft_check_duplicate_args(char **argv)
+{
+	int	j;
+	int	i;
+
+	i = 0;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[j])
+		{
+			if (ft_atol(argv[i]) == ft_atol(argv[j]) && j != i)
+				exit(-1);
+			j++;
+		}
+		i++;
+	}
+}

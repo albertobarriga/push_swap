@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/04 17:06:26 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/05 18:02:42 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	i = argc;
+	ft_check_arg(argv, argc, &info);
 	if (argc > 2)
 	{
 		while (i > 1)
 		{
-			ft_init_stacks(&stack_a, ft_atoi(argv[i - 1]));
+			ft_init_stacks(&stack_a, ft_atol(argv[i - 1]));
 			i--;
 		}
 	}
@@ -62,12 +63,13 @@ void	print_list(t_stack *first)
 
 void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info)
 {
-	info->split_values = ft_split(argv[1], ' ');
+	(void)argv;
+	// info->split_values = ft_split(argv[1], ' ');
 	info->max_size = ft_count_arg(info) - 1;
 	info->i = info->max_size;
 	while (info->i >= 0)
 	{
-		ft_init_stacks(stack_a, ft_atoi(info->split_values[info->i]));
+		ft_init_stacks(stack_a, ft_atol(info->split_values[info->i]));
 		info->i--;
 	}
 }

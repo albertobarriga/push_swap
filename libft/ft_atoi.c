@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 17:05:55 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/05 17:34:00 by abarriga         ###   ########.fr       */
+/*   Created: 2022/08/28 13:36:42 by abarriga          #+#    #+#             */
+/*   Updated: 2022/09/24 17:44:25 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	ft_atol(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	s;
 	int	res;
