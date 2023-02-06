@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/05 18:34:59 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:10:02 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,7 @@ void	ft_check_duplicate_string(t_arg	*info);
 void	ft_check_duplicate_args(char **argv);
 
 void	ft_error();
+
+void	ft_check_num(char **argv);
 
 #endif

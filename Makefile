@@ -1,6 +1,6 @@
 SRCS = main2.c \
 	   ft_check_arg.c \
-	   atoi.c \
+	   atol.c \
 	   ft_error.c
 
 OBJ =  ${SRCS:.c=.o}
