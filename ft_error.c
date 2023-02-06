@@ -6,13 +6,13 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 18:33:15 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/06 12:10:05 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:45:26 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error()
+void	ft_error_input(void)
 {
 	printf("El programa se ha acabado por un error en la entrada");
 	exit(-1);

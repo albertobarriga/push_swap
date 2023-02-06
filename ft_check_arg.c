@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:17:11 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/06 15:40:57 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:36:45 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_check_arg(char **argv, int argc, t_arg *info)
 {
 	if (argc < 2)
-		ft_error();
+		ft_error_input();
 	else if (argc == 2)
 	{
 		info->split_values = ft_split(argv[1], ' ');
@@ -45,11 +45,11 @@ void	ft_check_num(char **argv)
 			if (j == 0 && argv[i][0] == '-' && argv[i][1])
 			{
 				if (argv[i][1] == '0')
-					ft_error();
+					ft_error_input();
 				j++;
 			}
 			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
-				ft_error();
+				ft_error_input();
 			j++;
 		}
 		i++;
@@ -63,14 +63,14 @@ void	ft_check_duplicate_string(t_arg	*info)
 
 	i = 0;
 	if (info->max_size == 0)
-		ft_error();
+		ft_error_input();
 	while (info->split_values[i])
 	{
 		j = 0;
 		while (info->split_values[j])
 		{
 			if (ft_atol(info->split_values[i]) == ft_atol(info->split_values[j]) && j != i)
-				ft_error();
+				ft_error_input();
 			j++;
 		}
 		i++;
@@ -89,7 +89,7 @@ void	ft_check_duplicate_args(char **argv)
 		while (argv[j])
 		{
 			if (ft_atol(argv[i]) == ft_atol(argv[j]) && j != i)
-				ft_error();
+				ft_error_input();
 			j++;
 		}
 		i++;

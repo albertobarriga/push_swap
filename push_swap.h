@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/06 13:10:02 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:36:45 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct s_stack
 {
@@ -55,8 +56,11 @@ void	ft_check_duplicate_string(t_arg	*info);
 
 void	ft_check_duplicate_args(char **argv);
 
-void	ft_error();
+void	ft_error_input();
 
 void	ft_check_num(char **argv);
+
+void	ft_check_atol(long res);
+
 
 #endif

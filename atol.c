@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   atol.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:05:55 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/05 17:34:00 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:33:43 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atol(const char *str)
 {
-	int	s;
-	int	res;
-	int	i;
+	long	s;
+	long	res;
+	long	i;
 
 	s = 1;
 	res = 0;
@@ -34,6 +34,16 @@ int	ft_atol(const char *str)
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
+
 	res = res * s;
-	return (res);
+	ft_check_atol(res);
+	return ((int)res);
+}
+
+void	ft_check_atol(long res)
+{
+	if (res > INT_MAX)
+		ft_error_input();
+	if (res < INT_MIN)
+		ft_error_input();
 }
