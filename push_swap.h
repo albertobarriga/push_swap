@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/06 17:36:45 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:07:27 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_stack
 {
 	int	value;
 	struct s_stack *next;
+	int	index;
 }					t_stack;
 typedef struct s_arg
 {
