@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/06 13:41:54 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/07 21:11:29 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 int	main(int argc, char **argv)
 {
 	t_stack		*stack_a;
-	t_stack		*stack_b;
+	//t_stack		*stack_b;
 	t_arg		info;
 	int			i;
 
 	stack_a = NULL;
-	stack_b = NULL;
+	//stack_b = NULL;
 	i = argc;
+	//ft_init_info(info);
 	ft_check_arg(argv, argc, &info);
 	if (argc > 2)
 	{
@@ -35,7 +36,9 @@ int	main(int argc, char **argv)
 	{
 		ft_stack_string(argv, &stack_a, &info);
 	}
+	ft_init_order(stack_a);
 	print_list(stack_a);
+
 }
 
 t_stack	*ft_init_stacks(t_stack **first, int value)
@@ -55,10 +58,10 @@ void	print_list(t_stack *first)
 {
 	while (first->next)
 	{
-		printf("imprime  %i\n", first->value);
+		printf("imprime  %i  ->pos_r= %i\n", first->value, first->pos_r);
 		first = first->next;
 	}
-	printf("imprime  %i\n", first->value);
+	printf("imprime  %i  ->pos_r= %i\n", first->value, first->last_pos);
 }
 
 void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info)

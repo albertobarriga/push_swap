@@ -1,7 +1,8 @@
 SRCS = main2.c \
 	   ft_check_arg.c \
 	   atol.c \
-	   ft_error.c
+	   ft_error.c \
+	   utils.c
 
 OBJ =  ${SRCS:.c=.o}
 
