@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:27:45 by alberto           #+#    #+#             */
-/*   Updated: 2023/02/08 13:55:06 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/08 14:04:25 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_init_pos_r(t_stack *node)
 	int j;
 
 	i = 0;
-	j   = ft_lstsize(node);
+	j   = ft_stacksize(node);
 	while (node->next)
 	{
 		node->pos_r = i;
@@ -55,7 +55,7 @@ void	ft_init_pos_ord(t_stack *top)
 	i = 0;
 	last = INT_MIN;
 	node = top;
-	while (i < ft_lstsize(top))
+	while (i < ft_stacksize(top))
 	{
 		min = INT_MAX;
 		while (node)
@@ -71,7 +71,7 @@ void	ft_init_pos_ord(t_stack *top)
 	}
 }
 
-int	ft_lstsize(t_stack *lst)
+int	ft_stacksize(t_stack *lst)
 {
 	int	count;
 

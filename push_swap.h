@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/08 11:56:52 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/08 14:05:08 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
+# include "libft/libft.h"
+# include "libft/printf/ft_printf.h"
 
 typedef struct s_stack
 {
@@ -47,14 +49,6 @@ void	ft_stack_string (char **argv, t_stack **stack_a, t_arg *info);
 
 int	ft_count_arg(t_arg	*info);
 
-void	*ft_bzero(void *s, size_t n);
-
-void	*ft_calloc(size_t count, size_t size);
-
-int	ft_count_words(char const *s, char c);
-
-char	**ft_split(char const	*s, char c);
-
 void	ft_check_arg(char **argv, int argc, t_arg *info);
 
 void	ft_check_duplicate_string(t_arg	*info);
@@ -69,7 +63,7 @@ void	ft_check_atol(long res);
 
 void    ft_init_order(t_stack   *node);
 
-int	ft_lstsize(t_stack *lst);
+int		ft_stacksize(t_stack *lst);
 
 void    ft_init_pos_r(t_stack *node);
 
