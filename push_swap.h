@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/08 14:05:08 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/08 18:38:45 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ t_stack *ft_init_stacks(t_stack **first, int value);
 
 void	print_list(t_stack *first);
 
-int	ft_atol(const char *str);
+int		ft_atol(const char *str);
 
 void	ft_stack_string (char **argv, t_stack **stack_a, t_arg *info);
 
-int	ft_count_arg(t_arg	*info);
+int		ft_count_arg(t_arg	*info);
 
 void	ft_check_arg(char **argv, int argc, t_arg *info);
 
@@ -69,6 +69,13 @@ void    ft_init_pos_r(t_stack *node);
 
 void	ft_init_pos_ord(t_stack *node);
 
+// FUNCIONS THAT ORDER THE STACK
+
+void	ft_swap_a(t_stack **stack_a);
+
+void	ft_swap_b(t_stack **stack_b);
+
+void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/08 12:41:42 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/08 18:38:05 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	main(int argc, char **argv)
 		ft_stack_string(argv, &stack_a, &info);
 	}
 	ft_init_order(stack_a);
+	ft_ss(&stack_a, &stack_a);
 	print_list(stack_a);
-
 }
 
 t_stack	*ft_init_stacks(t_stack **first, int value)
@@ -58,16 +58,15 @@ void	print_list(t_stack *first)
 {
 	while (first->next)
 	{
-		printf("imprime  %i  ->pos_r= %i  ->index= %i\n", first->value, first->pos_r, first->index);
+		ft_printf("imprime  %i  ->pos_r= %i  ->index= %i\n", first->value, first->pos_r, first->index);
 		first = first->next;
 	}
-	printf("imprime  %i  ->pos_r= %i  ->index= %i\n", first->value, first->last_pos, first->index);
+	ft_printf("imprime  %i  ->pos_r= %i  ->index= %i\n", first->value, first->last_pos, first->index);
 }
 
 void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info)
 {
 	(void)argv;
-	// info->split_values = ft_split(argv[1], ' ');
 	info->max_size = ft_count_arg(info) - 1;
 	info->i = info->max_size;
 	while (info->i >= 0)
