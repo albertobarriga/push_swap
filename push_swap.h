@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/07 21:51:19 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/08 11:56:52 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_stack
 	int	index;
 	int	pos_r;
 }					t_stack;
+
+// typedef struct	s_
 typedef struct s_arg
 {
 	char	**split_values;
@@ -70,6 +72,8 @@ void    ft_init_order(t_stack   *node);
 int	ft_lstsize(t_stack *lst);
 
 void    ft_init_pos_r(t_stack *node);
+
+void	ft_init_pos_ord(t_stack *node);
 
 
 

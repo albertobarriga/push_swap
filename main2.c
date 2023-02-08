@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/07 21:11:29 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/08 12:41:42 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ void	print_list(t_stack *first)
 {
 	while (first->next)
 	{
-		printf("imprime  %i  ->pos_r= %i\n", first->value, first->pos_r);
+		printf("imprime  %i  ->pos_r= %i  ->index= %i\n", first->value, first->pos_r, first->index);
 		first = first->next;
 	}
-	printf("imprime  %i  ->pos_r= %i\n", first->value, first->last_pos);
+	printf("imprime  %i  ->pos_r= %i  ->index= %i\n", first->value, first->last_pos, first->index);
 }
 
 void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info)
