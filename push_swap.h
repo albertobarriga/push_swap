@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/08 18:38:45 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/09 17:36:11 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 {
 	int	value;
 	struct s_stack *next;
-	int	last_pos;
+	// int	last_pos;
 	int	index;
 	int	pos_r;
 }					t_stack;
@@ -76,6 +76,10 @@ void	ft_swap_a(t_stack **stack_a);
 void	ft_swap_b(t_stack **stack_b);
 
 void	ft_ss(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_push_b(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_push_a(t_stack **stack_a, t_stack **stack_b);
 
 
 #endif
