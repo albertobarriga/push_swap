@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/09 17:42:40 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/09 18:24:09 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(int argc, char **argv)
 		while (i > 1)
 		{
 			ft_init_stacks(&stack_a, ft_atol(argv[i - 1]));
-			// ft_init_stacks(&stack_b, ft_atol(argv[i - 1]));
 			i--;
 		}
 	}
@@ -40,7 +39,10 @@ int	main(int argc, char **argv)
 	ft_init_order(stack_a);
 	// ft_ss(&stack_a, &stack_b);
 	ft_push_b(&stack_a, &stack_b);
-	ft_push_b(&stack_a, &stack_b);
+	// ft_push_b(&stack_a, &stack_b);
+	// ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_b, &stack_a);
+	// ft_push_b(&stack_b, &stack_a);
 	print_list(stack_a);
 	print_list(stack_b);
 }

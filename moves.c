@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:24:54 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/09 17:42:31 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/09 18:20:22 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,16 @@ void	ft_push_b(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*temp;
 
-	if (stack_a)
+	if (*stack_a)
 	{
-		if (stack_b)
+		if (*stack_b)
+		{
+			temp = *stack_a;
+			(*stack_a) = (*stack_a)->next;
+			temp->next = *stack_b;
+			(*stack_b) = temp;
+		}
+		else
 		{
 			temp = *stack_a;
 			(*stack_a) = (*stack_a)->next;
@@ -58,11 +65,13 @@ void	ft_push_b(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
+// HACE FALTA ARREGLAR NO FUNCIONA
+
 void	ft_push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*temp;
 
-	if (stack_b)
+	if (*stack_b)
 	{
 			temp = *stack_b;
 			(*stack_b) = (*stack_b)->next;
