@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/10 19:55:16 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/10 20:00:15 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,14 @@ int	main(int argc, char **argv)
 	}
 	ft_init_order(stack_a);
 	// ft_ss(&stack_a, &stack_b);
-	// ft_push_b(&stack_a, &stack_b);
-	// ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_a, &stack_b);
 	print_list(stack_a);
 	print_list(stack_b);
-	// ft_rr(&stack_a, &stack_b);
-	ft_rev_rot(&stack_b);
+	ft_rev_rr(&stack_a, &stack_b);
+	ft_rev_rr(&stack_a, &stack_b);
+	// ft_rev_rot(&stack_b);
 	print_list(stack_a);
 	print_list(stack_b);
 }
