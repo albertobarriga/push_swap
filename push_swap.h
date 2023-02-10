@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/09 17:36:11 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:25:39 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,10 @@ void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 void	ft_push_b(t_stack **stack_a, t_stack **stack_b);
 
 void	ft_push_a(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_r(t_stack	**stack);
+
+t_stack	*ft_last_stack(t_stack	*stack);
 
 
 #endif
