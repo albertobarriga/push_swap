@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/10 18:32:33 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/10 19:49:12 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,10 @@ void	ft_r(t_stack	**stack);
 t_stack	*ft_last_stack(t_stack	*stack);
 
 void	ft_rr(t_stack **stack_a, t_stack **stack_b);
+
+t_stack	*ft_penultimate_stack(t_stack	*stack);
+
+void	ft_rev_rot(t_stack	**stack);
 
 
 #endif
