@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:24:54 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/10 02:27:35 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/10 18:43:00 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,21 @@ void	ft_push_b(t_stack **stack_out, t_stack **stack_in)
 	}
 }
 
+// Rota el primer nodo y lo pone al final
 void	ft_r(t_stack	**stack)
 {
 	t_stack	*temp;
 	t_stack	*last;
-
-	temp = (*stack)->next;
-	last = ft_last_stack(*stack);
-	last->next = (*stack);
-	last = last->next;
-	last->next = NULL;
-	*stack = temp;
+	
+	if ((*stack) && (*stack)->next)
+	{
+		temp = (*stack)->next;
+		last = ft_last_stack(*stack);
+		last->next = (*stack);
+		last = last->next;
+		last->next = NULL;
+		*stack = temp;
+	}
 }
 
 t_stack	*ft_last_stack(t_stack	*stack)
@@ -86,6 +90,13 @@ t_stack	*ft_last_stack(t_stack	*stack)
 		stack = stack->next;
 	}
 	return (stack);
+}
+
+void	ft_rr(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_r(stack_a);
+	ft_r(stack_b);
+	
 }
 // HACE FALTA ARREGLAR NO FUNCIONA
 
