@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/10 19:57:40 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/12 23:42:44 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@
 typedef struct s_stack
 {
 	int	value;
-	struct s_stack *next;
-	// int	last_pos;
 	int	index;
 	int	pos_r;
+	int	targ_pos;
+	int	costa;
+	int costb;
+	struct s_stack *next;
 }					t_stack;
 
 // typedef struct	s_
@@ -68,6 +70,8 @@ int		ft_stacksize(t_stack *lst);
 void    ft_init_pos_r(t_stack *node);
 
 void	ft_init_pos_ord(t_stack *node);
+
+void    ft_target(t_stack *stack_a, t_stack *stack_b);
 
 // FUNCIONS THAT ORDER THE STACK
 

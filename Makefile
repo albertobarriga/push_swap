@@ -3,7 +3,8 @@ SRCS = main2.c \
 	   atol.c \
 	   ft_error.c \
 	   utils.c \
-	   moves.c
+	   moves.c \
+	   target.c
 
 OBJ =  ${SRCS:.c=.o}
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:27:45 by alberto           #+#    #+#             */
-/*   Updated: 2023/02/09 17:35:46 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/12 20:42:10 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ void	ft_init_pos_ord(t_stack *top)
 	int		i;
 	t_stack	*node;
 
-	i = 0;
+	i = 1;
 	last = INT_MIN;
 	node = top;
-	while (i < ft_stacksize(top))
+	while (i <= ft_stacksize(top))
 	{
 		min = INT_MAX;
 		while (node)

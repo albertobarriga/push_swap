@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:24:54 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/10 19:57:24 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/12 20:22:29 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,19 +131,3 @@ void	ft_rev_rr(t_stack **stack_a, t_stack **stack_b)
 	ft_rev_rot(stack_a);
 	ft_rev_rot(stack_b);
 }
-
-// HACE FALTA ARREGLAR NO FUNCIONA
-
-/* void	ft_push_a(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack	*temp;
-
-	if (*stack_b)
-	{
-			temp = *stack_b;
-			(*stack_b) = (*stack_b)->next;
-			(*stack_a) = temp;
-			(*stack_a)->next = NULL;
-		ft_printf("pa\n");
-	}
-} */
