@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/12 23:42:44 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/13 11:32:17 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ typedef struct s_stack
 	int	pos_r;
 	int	targ_pos;
 	int	costa;
-	int costb;
-	struct s_stack *next;
+	int	costb;
+	struct	s_stack	*next;
 }					t_stack;
 
 // typedef struct	s_
