@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 19:33:43 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/13 15:54:03 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/13 17:35:23 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_target(t_stack *stack_a, t_stack *stack_b)
 	int		temp_pos;
 	int		temp_ind;
 
-	
 	while (stack_b)
 	{
 		stacka = stack_a;
@@ -27,7 +26,6 @@ void	ft_target(t_stack *stack_a, t_stack *stack_b)
 		{
 			if (stacka->index > stack_b->index && (stacka->index < temp_ind || temp_ind == 0))
 			{
-				// printf("temp_index = %i y stack_a index = %i\n", temp_ind, stacka->index);
 				temp_pos = stacka->pos_r;
 				temp_ind = stacka->index;
 			}
@@ -40,7 +38,6 @@ void	ft_target(t_stack *stack_a, t_stack *stack_b)
 			{
 				if (stacka->index < stack_b->index && (temp_ind > stacka->index || temp_ind == 0))
 				{
-					printf("dentro del bucle%i\n", stacka->index);
 					temp_pos = stacka->pos_r;
 					temp_ind = stacka->index;
 				}

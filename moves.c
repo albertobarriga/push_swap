@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:24:54 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/13 11:27:53 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/13 17:16:29 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ft_swap_b(t_stack **stack_b)
 void	ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_swap_a(stack_a);
+	ft_swap_a(stack_b);
 	(void)stack_b;
 	// ft_swap_b(stack_b);
 }
