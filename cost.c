@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:42:35 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/14 17:38:57 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/14 18:29:00 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,36 @@ void ft_cost(t_stack *stack_a, t_stack *stack_b)
 			stack_b->costa = stack_b->targ_pos;
 		else if (stack_b->targ_pos > (len_a / 2))
 			stack_b->costa = (len_a - stack_b->targ_pos) * -1;
+		stack_b = stack_b->next;
+		// ft_cost_abs(stack_b);
+	}
+}
+
+void ft_cost_abs(t_stack	*stack_b)
+{
+	while (stack_b)
+	{
+		if (stack_b->costa >= 0 && stack_b->costb >= 0)
+		{
+			if (stack_b->costa >= stack_b->costb)
+				stack_b->cost_abs = stack_b->costa;
+			else
+				stack_b->cost_abs = stack_b->costb;
+		}
+		else if (stack_b->costa < 0 && stack_b->costb < 0)
+		{
+			if (stack_b->costa < stack_b->costb)
+				stack_b->cost_abs = stack_b->costa * -1;
+			else
+				stack_b->cost_abs = stack_b->costb * -1;
+		}
+		else
+		{
+			if (stack_b->costa < 0)
+				stack_b->cost_abs = (-1 * stack_b->costa) + stack_b->costb;
+			else if (stack_b->costb < 0)
+				stack_b->cost_abs = (-1 * stack_b->costb) + stack_b->costa;
+		}
 		stack_b = stack_b->next;
 	}
 }

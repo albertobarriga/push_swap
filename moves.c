@@ -6,13 +6,13 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:24:54 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/13 17:16:29 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/14 18:48:45 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap_a(t_stack **stack_a)
+void	ft_s(t_stack **stack_a)
 {
 	t_stack	*temp;
 
@@ -23,22 +23,22 @@ void	ft_swap_a(t_stack **stack_a)
 	ft_printf("sa\n");
 }
 
-void	ft_swap_b(t_stack **stack_b)
-{
-	t_stack	*temp;
+// void	ft_swap_b(t_stack **stack_b)
+// {
+// 	t_stack	*temp;
 
-	temp = (*stack_b)->next;
-	(*stack_b)->next = (*stack_b)->next->next;
-	temp->next = (*stack_b);
-	(*stack_b) = temp;
-	ft_printf("sb\n");
-}
+// 	temp = (*stack_b)->next;
+// 	(*stack_b)->next = (*stack_b)->next->next;
+// 	temp->next = (*stack_b);
+// 	(*stack_b) = temp;
+// 	ft_printf("sb\n");
+// }
 
 void	ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_swap_a(stack_a);
-	ft_swap_a(stack_b);
-	(void)stack_b;
+	ft_s(stack_a);
+	ft_s(stack_b);
+	// (void)stack_b;
 	// ft_swap_b(stack_b);
 }
 
@@ -81,6 +81,7 @@ void	ft_r(t_stack	**stack)
 		last = last->next;
 		last->next = NULL;
 		*stack = temp;
+		printf("ra");
 	}
 }
 
@@ -125,6 +126,7 @@ void	ft_rev_rot(t_stack	**stack)
 		(*stack) = temp;
 		penult->next = NULL;
 	}
+	printf("rra");
 }
 
 void	ft_rev_rr(t_stack **stack_a, t_stack **stack_b)

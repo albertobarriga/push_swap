@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/14 16:16:02 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/14 19:09:03 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_stack
 	int	targ_pos;
 	int	costa;
 	int	costb;
+	int	cost_abs;
 	struct	s_stack	*next;
 }					t_stack;
 
@@ -75,9 +76,9 @@ void    ft_target(t_stack *stack_a, t_stack *stack_b);
 
 // FUNCIONS THAT ORDER THE STACK
 
-void	ft_swap_a(t_stack **stack_a);
+void	ft_s(t_stack **stack_a);
 
-void	ft_swap_b(t_stack **stack_b);
+// void	ft_swap_b(t_stack **stack_b);
 
 void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 
@@ -100,5 +101,11 @@ void	ft_rev_rr(t_stack **stack_a, t_stack **stack_b);
 void 	ft_cost(t_stack *stack_a, t_stack *stack_b);
 
 void	ft_recalculate_pos(t_stack	*stack_a, t_stack	*stack_b);
+
+void ft_cost_abs(t_stack	*stack_b);
+
+// Algorithm to order the stacks
+
+void	ft_order_3(t_stack	**stack_a);
 
 #endif
