@@ -6,9 +6,30 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:42:35 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/13 17:43:07 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/14 17:38:57 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void ft_cost(t_stack *stack_a, t_stack *stack_b)
+{
+	int	len_a;
+	int	len_b;
+
+	len_a = ft_stacksize(stack_a);
+	len_b = ft_stacksize(stack_b);
+	while (stack_b)
+	{
+		if (stack_b->pos_r <= (len_b / 2))
+			stack_b->costb = stack_b->pos_r;
+
+		else if (stack_b->pos_r > (len_b / 2))
+			stack_b->costb = (len_b - stack_b->pos_r) * -1;
+		if (stack_b->targ_pos <= (len_a / 2))
+			stack_b->costa = stack_b->targ_pos;
+		else if (stack_b->targ_pos > (len_a / 2))
+			stack_b->costa = (len_a - stack_b->targ_pos) * -1;
+		stack_b = stack_b->next;
+	}
+}

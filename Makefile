@@ -4,7 +4,9 @@ SRCS = main2.c \
 	   ft_error.c \
 	   utils.c \
 	   moves.c \
-	   target.c
+	   target.c \
+	   cost.c \
+	   order.c
 
 OBJ =  ${SRCS:.c=.o}
 

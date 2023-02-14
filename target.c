@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 19:33:43 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/13 17:35:23 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/14 16:07:38 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,11 @@ void	ft_target(t_stack *stack_a, t_stack *stack_b)
 		stack_b->targ_pos = temp_pos;
 		stack_b = stack_b->next;
 	}
+}
+
+void	ft_recalculate_pos(t_stack	*stack_a, t_stack	*stack_b)
+{
+	ft_target(stack_a, stack_b);
+	ft_init_pos_r(stack_a);
+	ft_init_pos_r(stack_b);
 }

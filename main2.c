@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/13 15:12:42 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/14 17:28:32 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,19 @@ int	main(int argc, char **argv)
 	// ft_ss(&stack_a, &stack_b);
 	ft_push_b(&stack_a, &stack_b);
 	ft_push_b(&stack_a, &stack_b);
-	// ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_a, &stack_b);
+	
 	print_list(stack_a);
 	print_list(stack_b);
+	// ft_init_pos_r(node);
+	ft_recalculate_pos(stack_a, stack_b);
 	ft_target(stack_a, stack_b);
+	ft_cost(stack_a, stack_b);
 	// ft_rev_rr(&stack_a, &stack_b);
 	// ft_rev_rr(&stack_a, &stack_b);
 	// ft_rev_rot(&stack_b);
@@ -69,7 +78,7 @@ void	print_list(t_stack *first)
 	ft_printf("entra\n");
 	while (first)
 	{
-		ft_printf("imprime  %i  ->pos_r= %i  ->index= %i   ->target= %i\n", first->value, first->pos_r, first->index, first->targ_pos);
+		ft_printf("imprime  %i  ->pos_r= %i  ->index= %i   ->target= %i   ->costa= %i   ->costb= %i\n", first->value, first->pos_r, first->index, first->targ_pos, first->costa, first->costb);
 		first = first->next;
 	}
 	// ft_printf("imprime  %i  ->pos_r= %i  ->index= %i\n", first->value, first->last_pos, first->index);
