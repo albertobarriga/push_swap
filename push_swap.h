@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/14 19:09:03 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/15 11:55:04 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	ft_s(t_stack **stack_a);
 
 void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 
-void	ft_push_b(t_stack **stack_a, t_stack **stack_b);
+void	ft_push(t_stack **stack_a, t_stack **stack_b);
 
 void	ft_push_a(t_stack **stack_a, t_stack **stack_b);
 
@@ -107,5 +107,8 @@ void ft_cost_abs(t_stack	*stack_b);
 // Algorithm to order the stacks
 
 void	ft_order_3(t_stack	**stack_a);
+
+void	ft_push_less3(t_stack	**stack_a, t_stack	**stack_b);
+
 
 #endif

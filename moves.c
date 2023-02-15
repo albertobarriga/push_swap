@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:24:54 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/14 18:48:45 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/15 11:34:05 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_ss(t_stack **stack_a, t_stack **stack_b)
 
 /* Stack out es de donde quita el nodo y el in es donde se mete el nodo
 no imprime pb o pa*/
-void	ft_push_b(t_stack **stack_out, t_stack **stack_in)
+void	ft_push(t_stack **stack_out, t_stack **stack_in)
 {
 	t_stack	*temp;
 
@@ -72,7 +72,7 @@ void	ft_r(t_stack	**stack)
 {
 	t_stack	*temp;
 	t_stack	*last;
-	
+
 	if ((*stack) && (*stack)->next)
 	{
 		temp = (*stack)->next;
@@ -87,7 +87,7 @@ void	ft_r(t_stack	**stack)
 
 t_stack	*ft_last_stack(t_stack	*stack)
 {
-	while(stack->next)
+	while (stack->next)
 	{
 		stack = stack->next;
 	}
@@ -97,8 +97,8 @@ t_stack	*ft_last_stack(t_stack	*stack)
 t_stack	*ft_penultimate_stack(t_stack	*stack)
 {
 	t_stack	*temp;
-	
-	while(stack->next)
+
+	while (stack->next)
 	{
 		temp = stack;
 		stack = stack->next;
@@ -110,14 +110,13 @@ void	ft_rr(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_r(stack_a);
 	ft_r(stack_b);
-	
 }
 
 void	ft_rev_rot(t_stack	**stack)
 {
 	t_stack	*temp;
 	t_stack	*penult;
-	
+
 	if (*stack && (*stack)->next)
 	{
 		temp = ft_last_stack(*stack);
