@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:47:19 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/16 11:08:18 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/16 17:29:55 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,5 @@ void	ft_push_less3(t_stack	**stack_a, t_stack	**stack_b)
 	len = ft_stacksize(*stack_a);
 	while (len-- > 3)
 		ft_push(stack_a, stack_b, 2);
+	ft_recalculate_pos(*stack_a, *stack_b);
 }

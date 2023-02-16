@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 19:33:43 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/14 16:07:38 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/16 17:57:19 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,13 @@ void	ft_target(t_stack *stack_a, t_stack *stack_b)
 
 void	ft_recalculate_pos(t_stack	*stack_a, t_stack	*stack_b)
 {
+	// (void)stack_a;
+	// (void)stack_b;
+
+	printf("recalculate\n");
 	ft_target(stack_a, stack_b);
 	ft_init_pos_r(stack_a);
 	ft_init_pos_r(stack_b);
+	ft_cost(stack_a, stack_b);
+	ft_cost_abs(stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/16 11:18:47 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:03:09 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,6 @@ int	main(int argc, char **argv)
 		ft_stack_string(argv, &stack_a, &info);
 	}
 	ft_init_order(stack_a);
-	// ft_ss(&stack_a, &stack_b);
-	// ft_push(&stack_a, &stack_b);
-	// ft_push(&stack_a, &stack_b);
-	// ft_push(&stack_a, &stack_b);
-	// ft_push(&stack_a, &stack_b);
-	// ft_push(&stack_a, &stack_b);
-	// ft_push(&stack_a, &stack_b);
-	// ft_push(&stack_a, &stack_b);
-	// ft_push(&stack_a, &stack_b);
 	// ft_recalculate_pos(stack_a, stack_b);
 	print_list(stack_a);
 	print_list(stack_b);
@@ -58,12 +49,11 @@ int	main(int argc, char **argv)
 	ft_target(stack_a, stack_b);
 	ft_cost(stack_a, stack_b);
 	ft_cost_abs(stack_b);
-	// ft_s(&stack_a);
 	ft_order_3(&stack_a);
-	// ft_rev_rr(&stack_a, &stack_b);
-	// ft_rev_rr(&stack_a, &stack_b);
-	// ft_rev_rot(&stack_b);
+	ft_recalculate_pos(stack_a, stack_b);
 	print_list(stack_a);
+	print_list(stack_b);
+	ft_order(&stack_a, &stack_b);
 	print_list(stack_b);
 }
 

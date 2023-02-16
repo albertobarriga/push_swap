@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/16 11:09:10 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:03:01 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct s_stack
 	struct	s_stack	*next;
 }					t_stack;
 
-// typedef struct	s_
 typedef struct s_arg
 {
 	char	**split_values;
@@ -110,5 +109,8 @@ void	ft_order_3(t_stack	**stack_a);
 
 void	ft_push_less3(t_stack	**stack_a, t_stack	**stack_b);
 
+int		ft_less_cost(t_stack	**stack_b);
+
+void	ft_order(t_stack **stack_a, t_stack **stack_b);
 
 #endif

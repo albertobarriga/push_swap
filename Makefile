@@ -6,7 +6,9 @@ SRCS = main2.c \
 	   moves.c \
 	   target.c \
 	   cost.c \
-	   order.c
+	   order.c \
+	   orderall.c
+	   
 
 OBJ =  ${SRCS:.c=.o}
 
