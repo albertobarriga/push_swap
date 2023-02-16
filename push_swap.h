@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/15 11:55:04 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:09:10 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,17 +76,15 @@ void    ft_target(t_stack *stack_a, t_stack *stack_b);
 
 // FUNCIONS THAT ORDER THE STACK
 
-void	ft_s(t_stack **stack_a);
+void	ft_s(t_stack **stack_a, int ab);
 
 // void	ft_swap_b(t_stack **stack_b);
 
 void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 
-void	ft_push(t_stack **stack_a, t_stack **stack_b);
+void	ft_push(t_stack **stack_out, t_stack **stack_in, int ab);
 
-void	ft_push_a(t_stack **stack_a, t_stack **stack_b);
-
-void	ft_r(t_stack	**stack);
+void	ft_r(t_stack	**stack, int ab);
 
 t_stack	*ft_last_stack(t_stack	*stack);
 
@@ -94,9 +92,11 @@ void	ft_rr(t_stack **stack_a, t_stack **stack_b);
 
 t_stack	*ft_penultimate_stack(t_stack	*stack);
 
-void	ft_rev_rot(t_stack	**stack);
+void	ft_rev_rot(t_stack	**stack, int ab);
 
 void	ft_rev_rr(t_stack **stack_a, t_stack **stack_b);
+
+// Calculate costs for movements
 
 void 	ft_cost(t_stack *stack_a, t_stack *stack_b);
 

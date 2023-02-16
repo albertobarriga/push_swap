@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:47:19 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/15 18:39:12 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:08:18 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,22 @@ void	ft_order_3(t_stack	**stack_a)
 {
 	if ((*stack_a)->index > (*stack_a)->next->index && (*stack_a)->next->index > (*stack_a)->next->next->index)
 	{
-		ft_r(stack_a);
-		ft_s(stack_a);
+		ft_r(stack_a, 1);
+		ft_s(stack_a, 1);
 	}
 	else if ((*stack_a)->index > (*stack_a)->next->index && (*stack_a)->next->index < (*stack_a)->next->next->index && (*stack_a)->index > (*stack_a)->next->next->index)
-		ft_r(stack_a);
+		ft_r(stack_a, 1);
 	else if ((*stack_a)->index < (*stack_a)->next->index && (*stack_a)->next->index > (*stack_a)->next->next->index && (*stack_a)->index > (*stack_a)->next->next->index)
-		ft_rev_rot(stack_a);
+		ft_rev_rot(stack_a, 1);
 	else if ((*stack_a)->index > (*stack_a)->next->index && (*stack_a)->next->index < (*stack_a)->next->next->index && (*stack_a)->index < (*stack_a)->next->next->index)
-		ft_s(stack_a);
+		ft_s(stack_a, 1);
 	else if ((*stack_a)->index < (*stack_a)->next->index && (*stack_a)->next->index > (*stack_a)->next->next->index && (*stack_a)->index < (*stack_a)->next->next->index)
 	{
-		ft_rev_rot(stack_a);
-		ft_s(stack_a);
+		ft_rev_rot(stack_a, 1);
+		ft_s(stack_a, 1);
 	}
 }
+
 static int	half(t_stack	**stack_a, int len)
 {
 	t_stack	*temp;
@@ -61,17 +62,17 @@ void	ft_push_less3(t_stack	**stack_a, t_stack	**stack_b)
 	{
 		if ((*stack_a)->index <= mid)
 		{
-			ft_push(stack_a, stack_b);
+			ft_push(stack_a, stack_b, 2);
 			temp = (*stack_a);
 		}
 		else if ((*stack_a)->index > mid)
 		{
-			ft_r(stack_a);
+			ft_r(stack_a, 1);
 			mid--;
 		}
 	}
 	temp = (*stack_a);
 	len = ft_stacksize(*stack_a);
 	while (len-- > 3)
-		ft_push(stack_a, stack_b);
+		ft_push(stack_a, stack_b, 2);
 }

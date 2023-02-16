@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/15 16:07:40 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:18:47 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 	ft_cost(stack_a, stack_b);
 	ft_cost_abs(stack_b);
 	// ft_s(&stack_a);
-	// ft_order_3(&stack_a);
+	ft_order_3(&stack_a);
 	// ft_rev_rr(&stack_a, &stack_b);
 	// ft_rev_rr(&stack_a, &stack_b);
 	// ft_rev_rot(&stack_b);
