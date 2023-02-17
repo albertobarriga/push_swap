@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   orderall.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:40:26 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/17 16:38:19 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/17 21:48:28 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,17 +90,30 @@ void	ft_order(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	ft_lap_numbers(t_stack *stack_a, t_stack *stack_b)
+void	ft_lap_numbers(t_stack **stack_a)
 {
 	int len;
+	int	i;
 	t_stack	*stack;
 
-	stack = stack_a;
+	stack = *stack_a;
 
-	len = ft_stacksize(stack_a);
-	if (stack_a->index != 1)
+	len = ft_stacksize(*stack_a);
+	if ((*stack_a)->index != 1)
 	{
-		while (stack_a )
+		while (stack->index != 1)
+			stack = stack->next;
+		if (stack->pos_r < ((len - 1)/ 2))
+		{
+			i = stack->pos_r;
+			while (i-- != 0)
+				ft_r(stack_a, 1);
+		}
+		else if ((stack->pos_r > ((len - 1)/ 2)))
+		{
+			i = len - stack->pos_r;
+			while (i-- != 0)
+				ft_rev_rot(stack_a, 1);
+		}
 	}
-	while (stack_a)
 }

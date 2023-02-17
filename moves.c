@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:24:54 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/17 13:37:09 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/17 19:42:22 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_push(t_stack **stack_out, t_stack **stack_in, int ab)
 			(*stack_in) = temp;
 		}
 		else
-		{º
+		{
 			temp = *stack_out;
 			(*stack_out) = (*stack_out)->next;
 			(*stack_in) = temp;

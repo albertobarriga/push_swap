@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/17 12:35:09 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/17 21:46:51 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,7 @@ void	ft_push_less3(t_stack	**stack_a, t_stack	**stack_b);
 int		ft_less_cost(t_stack	**stack_b);
 
 void	ft_order(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_lap_numbers(t_stack **stack_a);
 
 #endif

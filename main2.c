@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/17 13:08:13 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/17 21:47:01 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int	main(int argc, char **argv)
 	// print_list(stack_a);
 	// print_list(stack_b);
 	ft_order(&stack_a, &stack_b);
+	ft_print_list_both_stacks_data(stack_a, stack_b);
+	ft_lap_numbers(&stack_a);
 	ft_print_list_both_stacks_data(stack_a, stack_b);
 	// print_list(stack_a);
 	// print_list(stack_b);
