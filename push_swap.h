@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/16 18:03:01 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/17 12:35:09 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	main(int argc, char **argv);
 t_stack *ft_init_stacks(t_stack **first, int value);
 
 void	print_list(t_stack *first);
+
+void	ft_print_list_both_stacks_data(t_stack *stack_a, t_stack *stack_b);
 
 int		ft_atol(const char *str);
 

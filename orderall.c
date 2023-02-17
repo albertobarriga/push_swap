@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:40:26 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/16 16:57:09 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/17 13:08:22 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void ft_algorithm(t_stack **stack_a, t_stack **stack_b)
 	int movesb;
 	int	movesa;
 
-	printf("entra en la funcion de ordeancion\n");
+	// printf("entra en la funcion de ordeancion\n");
 	stack = (*stack_b);
 	cost_less = ft_less_cost(stack_b);
 	while (stack && stack->cost_abs != cost_less)
@@ -85,5 +85,7 @@ void	ft_order(t_stack **stack_a, t_stack **stack_b)
 	while (*stack_b)
 	{
 		ft_algorithm(stack_a, stack_b);
+		ft_recalculate_pos(*stack_a, *stack_b);
+		 ft_print_list_both_stacks_data(*stack_a, *stack_b);
 	}
 }

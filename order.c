@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:47:19 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/16 17:29:55 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/17 13:05:05 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_push_less3(t_stack	**stack_a, t_stack	**stack_b)
 
 	len = ft_stacksize(*stack_a);
 	mid = half(stack_a, len);
-	printf("mid = %i\n", mid);
+	// printf("mid = %i\n", mid);
 	temp = (*stack_a);
 	while (temp && (mid > 0) && ft_stacksize(*stack_a) > 3)
 	{
