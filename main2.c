@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/18 15:57:36 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/18 16:21:06 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ int	main(int argc, char **argv)
 	// ft_recalculate_pos(stack_a, stack_b);
 	// ft_print_list_both_stacks_data(stack_a, stack_b);
 	// ft_r(&stack_a);
-	ft_printf("index = %i\n", stack_a->index);
+	// ft_printf("index = %i\n", stack_a->index);
+	ft_print_list_both_stacks_data(stack_a, stack_b);
 	ft_push_less3(&stack_a, &stack_b);
-	ft_printf("index 2 = %i\n", stack_a->index);
+	// ft_printf("index 2 = %i\n", stack_a->index);
 	// ft_init_pos_r(node);
 	ft_recalculate_pos(stack_a, stack_b);
 	ft_order_3(&stack_a);
@@ -62,7 +63,7 @@ int	main(int argc, char **argv)
 	ft_print_list_both_stacks_data(stack_a, stack_b);
 	ft_lap_numbers(&stack_a);
 	ft_print_list_both_stacks_data(stack_a, stack_b);
-	printf("INTmin=%d, intmax =%d/n",INT_MIN, INT_MAX);
+	// printf("INTmin=%d, intmax =%d/n",INT_MIN, INT_MAX);
 	// print_list(stack_a);
 	// print_list(stack_b);
 

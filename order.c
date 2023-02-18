@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:47:19 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/17 13:05:05 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:54:50 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,33 +32,17 @@ void	ft_order_3(t_stack	**stack_a)
 	}
 }
 
-static int	half(t_stack	**stack_a, int len)
-{
-	t_stack	*temp;
-	int		half;
-
-	temp = (*stack_a);
-	half = 0;
-	while (temp)
-	{
-		half = half + temp->index;
-		temp = temp->next;
-	}
-	half = half / len;
-	return (half);
-}
-
 void	ft_push_less3(t_stack	**stack_a, t_stack	**stack_b)
 {
 	t_stack	*temp;
-	int		len;
 	int		mid;
+	int		i;
 
-	len = ft_stacksize(*stack_a);
-	mid = half(stack_a, len);
-	// printf("mid = %i\n", mid);
+	mid = ft_stacksize(*stack_a) / 2;
+	i = mid;
+
 	temp = (*stack_a);
-	while (temp && (mid > 0) && ft_stacksize(*stack_a) > 3)
+	while (temp && (i > 0) && ft_stacksize(*stack_a) > 3)
 	{
 		if ((*stack_a)->index <= mid)
 		{
@@ -68,12 +52,11 @@ void	ft_push_less3(t_stack	**stack_a, t_stack	**stack_b)
 		else if ((*stack_a)->index > mid)
 		{
 			ft_r(stack_a, 1);
-			mid--;
+			i--;
 		}
 	}
 	temp = (*stack_a);
-	len = ft_stacksize(*stack_a);
-	while (len-- > 3)
+	while (ft_stacksize(*stack_a) > 3)
 		ft_push(stack_a, stack_b, 2);
 	ft_recalculate_pos(*stack_a, *stack_b);
 }
