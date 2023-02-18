@@ -1,9 +1,10 @@
-SRCS = main2.c \
+SRCS = main.c \
 	   ft_check_arg.c \
 	   atol.c \
 	   ft_error.c \
 	   utils.c \
 	   moves.c \
+	   moves2.c \
 	   target.c \
 	   cost.c \
 	   order.c \

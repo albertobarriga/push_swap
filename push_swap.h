@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/17 21:46:51 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/18 20:37:18 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@
 
 typedef struct s_stack
 {
-	int	value;
-	int	index;
-	int	pos_r;
-	int	targ_pos;
-	int	costa;
-	int	costb;
-	int	cost_abs;
-	struct	s_stack	*next;
+	int				value;
+	int				index;
+	int				pos_r;
+	int				targ_pos;
+	int				costa;
+	int				costb;
+	int				cost_abs;
+	struct s_stack	*next;
 }					t_stack;
 
 typedef struct s_arg
@@ -39,9 +39,9 @@ typedef struct s_arg
 	int		i;
 }				t_arg;
 
-int	main(int argc, char **argv);
+int		main(int argc, char **argv);
 
-t_stack *ft_init_stacks(t_stack **first, int value);
+t_stack	*ft_init_stacks(t_stack **first, int value);
 
 void	print_list(t_stack *first);
 
@@ -49,7 +49,7 @@ void	ft_print_list_both_stacks_data(t_stack *stack_a, t_stack *stack_b);
 
 int		ft_atol(const char *str);
 
-void	ft_stack_string (char **argv, t_stack **stack_a, t_arg *info);
+void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info);
 
 int		ft_count_arg(t_arg	*info);
 
@@ -59,27 +59,27 @@ void	ft_check_duplicate_string(t_arg	*info);
 
 void	ft_check_duplicate_args(char **argv);
 
-void	ft_error_input();
+void	ft_error_input(void);
 
 void	ft_check_num(char **argv);
 
 void	ft_check_atol(long res);
 
-void    ft_init_order(t_stack   *node);
+void	ft_init_order(t_stack *node);
 
 int		ft_stacksize(t_stack *lst);
 
-void    ft_init_pos_r(t_stack *node);
+void	ft_init_pos_r(t_stack *node);
 
 void	ft_init_pos_ord(t_stack *node);
 
-void    ft_target(t_stack *stack_a, t_stack *stack_b);
+void	ft_target(t_stack *stack_a, t_stack *stack_b);
+
+int		ft_target_back(t_stack *stack_a, t_stack *stack_b);
 
 // FUNCIONS THAT ORDER THE STACK
 
 void	ft_s(t_stack **stack_a, int ab);
-
-// void	ft_swap_b(t_stack **stack_b);
 
 void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 
@@ -99,11 +99,11 @@ void	ft_rev_rr(t_stack **stack_a, t_stack **stack_b);
 
 // Calculate costs for movements
 
-void 	ft_cost(t_stack *stack_a, t_stack *stack_b);
+void	ft_cost(t_stack *stack_a, t_stack *stack_b);
 
 void	ft_recalculate_pos(t_stack	*stack_a, t_stack	*stack_b);
 
-void ft_cost_abs(t_stack	*stack_b);
+void	ft_cost_abs(t_stack	*stack_b);
 
 // Algorithm to order the stacks
 

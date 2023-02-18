@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:05:55 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/18 15:07:26 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/18 20:43:14 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	ft_atol(const char *str)
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
-
 	res = res * s;
 	ft_check_atol(res);
 	return ((int)res);

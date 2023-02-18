@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_arg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:17:11 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/06 17:36:45 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/18 20:51:16 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ void	ft_check_duplicate_string(t_arg	*info)
 		j = 0;
 		while (info->split_values[j])
 		{
-			if (ft_atol(info->split_values[i]) == ft_atol(info->split_values[j]) && j != i)
+			if (ft_atol(info->split_values[i])
+				== ft_atol(info->split_values[j]) && j != i)
 				ft_error_input();
 			j++;
 		}

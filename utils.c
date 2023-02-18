@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:27:45 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/18 16:11:06 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/18 20:45:39 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,18 @@ void	ft_init_order(t_stack *node)
 
 void	ft_init_pos_r(t_stack *node)
 {
-	int i;
-	// int j;
+	int	i;
 
 	i = 0;
-	// j   = ft_stacksize(node);
 	while (node)
 	{
 		node->pos_r = i;
 		i++;
 		node = node->next;
 	}
-	// node->last_pos = j - 1;
 }
 
-t_stack *get_node(t_stack *node, int value)
+t_stack	*get_node(t_stack *node, int value)
 {
 	while (node)
 	{
@@ -62,7 +59,8 @@ void	ft_init_pos_ord(t_stack *top)
 		min = INT_MAX;
 		while (node)
 		{
-			if ((node->value < min && (node->value > last)) || (node->value == INT_MIN && j == 0))
+			if ((node->value < min && (node->value > last))
+				|| (node->value == INT_MIN && j == 0))
 			{
 				if (node->value == INT_MIN)
 					j = 1;

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   cost.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:42:35 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/16 17:26:48 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/18 20:55:21 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_cost(t_stack *stack_a, t_stack *stack_b)
+void	ft_cost(t_stack *stack_a, t_stack *stack_b)
 {
 	int	len_a;
 	int	len_b;
@@ -31,10 +31,9 @@ void ft_cost(t_stack *stack_a, t_stack *stack_b)
 			stack_b->costa = (len_a - stack_b->targ_pos) * -1;
 		stack_b = stack_b->next;
 	}
-	// ft_cost_abs(stack_b);
 }
 
-void ft_cost_abs(t_stack	*stack_b)
+void	ft_cost_abs(t_stack	*stack_b)
 {
 	while (stack_b)
 	{

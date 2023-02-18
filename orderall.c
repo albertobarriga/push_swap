@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:40:26 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/18 16:17:58 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/18 20:53:38 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_less_cost(t_stack	**stack_b)
 {
 	t_stack	*stack;
-	int	cost;
+	int		cost;
 
 	cost = INT_MAX;
 	stack = *stack_b;
@@ -28,12 +28,12 @@ int	ft_less_cost(t_stack	**stack_b)
 	return (cost);
 }
 
-void ft_algorithm(t_stack **stack_a, t_stack **stack_b)
+void	ft_algorithm(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*stack;
-	int cost_less;
-	int movesb;
-	int	movesa;
+	int		cost_less;
+	int		movesb;
+	int		movesa;
 
 	stack = (*stack_b);
 	cost_less = ft_less_cost(stack_b);
@@ -90,24 +90,23 @@ void	ft_order(t_stack **stack_a, t_stack **stack_b)
 
 void	ft_lap_numbers(t_stack **stack_a)
 {
-	int len;
-	int	i;
+	int		len;
+	int		i;
 	t_stack	*stack;
 
 	stack = *stack_a;
-
 	len = ft_stacksize(*stack_a);
 	if ((*stack_a)->index != 1)
 	{
 		while (stack->index != 1)
 			stack = stack->next;
-		if (stack->pos_r < ((len - 1)/ 2))
+		if (stack->pos_r < ((len - 1) / 2))
 		{
 			i = stack->pos_r;
 			while (i-- != 0)
 				ft_r(stack_a, 1);
 		}
-		else if ((stack->pos_r > ((len - 1)/ 2)))
+		else if ((stack->pos_r > ((len - 1) / 2)))
 		{
 			i = len - stack->pos_r;
 			while (i-- != 0)
