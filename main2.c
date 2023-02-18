@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/17 21:47:01 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/18 15:57:36 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	main(int argc, char **argv)
 	ft_print_list_both_stacks_data(stack_a, stack_b);
 	ft_lap_numbers(&stack_a);
 	ft_print_list_both_stacks_data(stack_a, stack_b);
+	printf("INTmin=%d, intmax =%d/n",INT_MIN, INT_MAX);
 	// print_list(stack_a);
 	// print_list(stack_b);
 

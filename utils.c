@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarriga <abarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:27:45 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/13 17:36:53 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/18 16:11:06 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,11 @@ void	ft_init_pos_ord(t_stack *top)
 	int		min;
 	int		last;
 	int		i;
+	int		j;
 	t_stack	*node;
 
 	i = 1;
+	j = 0;
 	last = INT_MIN;
 	node = top;
 	while (i <= ft_stacksize(top))
@@ -60,8 +62,12 @@ void	ft_init_pos_ord(t_stack *top)
 		min = INT_MAX;
 		while (node)
 		{
-			if (node->value < min && (node->value > last))
+			if ((node->value < min && (node->value > last)) || (node->value == INT_MIN && j == 0))
+			{
+				if (node->value == INT_MIN)
+					j = 1;
 				min = node->value;
+			}
 			node = node->next;
 		}
 		last = min;
