@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:27:45 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/18 20:45:39 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/19 01:41:16 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,48 +44,35 @@ t_stack	*get_node(t_stack *node, int value)
 
 void	ft_init_pos_ord(t_stack *top)
 {
-	int		min;
-	int		last;
-	int		i;
-	int		j;
+	t_var	var;
 	t_stack	*node;
 
-	i = 1;
-	j = 0;
-	last = INT_MIN;
+	ft_init_variables_init_pos_ord(&var);
 	node = top;
-	while (i <= ft_stacksize(top))
+	while (var.i <= ft_stacksize(top))
 	{
-		min = INT_MAX;
+		var.min = INT_MAX;
 		while (node)
 		{
-			if ((node->value < min && (node->value > last))
-				|| (node->value == INT_MIN && j == 0))
+			if ((node->value < var.min && (node->value > var.last))
+				|| (node->value == INT_MIN && var.j == 0))
 			{
 				if (node->value == INT_MIN)
-					j = 1;
-				min = node->value;
+					var.j = 1;
+				var.min = node->value;
 			}
 			node = node->next;
 		}
-		last = min;
-		node = get_node(top, min);
-		node->index = i++;
+		var.last = var.min;
+		node = get_node(top, var.min);
+		node->index = var.i++;
 		node = top;
 	}
 }
 
-int	ft_stacksize(t_stack *lst)
+void	ft_init_variables_init_pos_ord(t_var *var)
 {
-	int	count;
-
-	count = 0;
-	if (!lst)
-		return (0);
-	while (lst)
-	{
-		count++;
-		lst = lst->next;
-	}
-	return (count);
+	var->i = 1;
+	var->j = 0;
+	var->last = INT_MIN;
 }

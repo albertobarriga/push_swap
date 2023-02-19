@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/18 20:48:41 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/19 01:43:39 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,51 +22,23 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	i = argc;
-	//ft_init_info(info);
 	ft_check_arg(argv, argc, &info);
 	if (argc > 2)
 	{
 		while (i > 1)
-		{
-			ft_init_stacks(&stack_a, ft_atol(argv[i - 1]));
-			i--;
-		}
+			ft_init_stacks(&stack_a, ft_atol(argv[i-- - 1]));
 	}
 	else if (argc == 2)
-	{
 		ft_stack_string(argv, &stack_a, &info);
-	}
 	ft_init_order(stack_a);
-	// ft_recalculate_pos(stack_a, stack_b);
-	// ft_print_list_both_stacks_data(stack_a, stack_b);
-	// ft_r(&stack_a);
-	// ft_printf("index = %i\n", stack_a->index);
-	ft_print_list_both_stacks_data(stack_a, stack_b);
 	ft_push_less3(&stack_a, &stack_b);
-	// ft_printf("index 2 = %i\n", stack_a->index);
-	// ft_init_pos_r(node);
 	ft_recalculate_pos(stack_a, stack_b);
 	ft_order_3(&stack_a);
 	ft_recalculate_pos(stack_a, stack_b);
 	ft_target(stack_a, stack_b);
-	//print_list(stack_a);
-	//print_list(stack_b);
-	// ft_print_list_both_stacks_data(stack_a, stack_b);
 	ft_cost(stack_a, stack_b);
 	ft_cost_abs(stack_b);
-	// ft_order_3(&stack_a);
-	ft_recalculate_pos(stack_a, stack_b);
-	ft_print_list_both_stacks_data(stack_a, stack_b);
-	// print_list(stack_a);
-	// print_list(stack_b);
 	ft_order(&stack_a, &stack_b);
-	ft_print_list_both_stacks_data(stack_a, stack_b);
-	ft_lap_numbers(&stack_a);
-	ft_print_list_both_stacks_data(stack_a, stack_b);
-	// printf("INTmin=%d, intmax =%d/n",INT_MIN, INT_MAX);
-	// print_list(stack_a);
-	// print_list(stack_b);
-
 }
 
 t_stack	*ft_init_stacks(t_stack **first, int value)
@@ -82,7 +54,7 @@ t_stack	*ft_init_stacks(t_stack **first, int value)
 	return (*first);
 }
 
-void	print_list(t_stack *first)
+/* void	print_list(t_stack *first)
 {
 	ft_printf("entra\n");
 	while (first)
@@ -92,6 +64,29 @@ void	print_list(t_stack *first)
 	}
 	// ft_printf("imprime  %i  ->pos_r= %i  ->index= %i\n", first->value, first->last_pos, first->index);
 	// ft_printf("imprime  %i\n", first->value);
+} */
+
+void	ft_print_list_both_stacks_data(t_stack *stack_a, t_stack *stack_b)
+{
+	ft_printf("STACK INFORMATION:\n");
+	while (stack_a != NULL || stack_b != NULL)
+	{
+		if (stack_a)
+		{
+			ft_printf("Value: %d; Pos: %d , Final index:%d		|",
+				stack_a->value, stack_a->pos_r, stack_a->index);
+			stack_a = stack_a->next;
+		}
+		else
+			ft_printf("                                   		|");
+		if (stack_b)
+		{
+			// ft_printf("Value: %d; Pos: %d , Final index:%d, Target:%d", stack_b->value, stack_b->pos_r, stack_b->index, stack_b->targ_pos);
+			ft_printf("imprime  %i  ->pos_r= %i  ->index= %i   ->target= %i   ->costa= %i   ->costb= %i  ->costabs= %i", stack_b->value, stack_b->pos_r, stack_b->index, stack_b->targ_pos, stack_b->costa, stack_b->costb, stack_b->cost_abs);
+			stack_b = stack_b->next;
+		}
+		ft_printf("\n");
+	}
 }
 
 void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info)

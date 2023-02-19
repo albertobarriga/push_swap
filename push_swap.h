@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/18 20:37:18 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/19 01:35:34 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,14 @@ typedef struct s_arg
 	int		max_size;
 	int		i;
 }				t_arg;
+
+typedef struct s_var
+{
+	int		min;
+	int		last;
+	int		i;
+	int		j;
+}				t_var;
 
 int		main(int argc, char **argv);
 
@@ -116,5 +124,7 @@ int		ft_less_cost(t_stack	**stack_b);
 void	ft_order(t_stack **stack_a, t_stack **stack_b);
 
 void	ft_lap_numbers(t_stack **stack_a);
+
+void	ft_init_variables_init_pos_ord(t_var *var);
 
 #endif

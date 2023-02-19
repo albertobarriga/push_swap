@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:42:35 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/18 20:55:21 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/19 01:41:58 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,19 @@ void	ft_cost_abs(t_stack	*stack_b)
 		}
 		stack_b = stack_b->next;
 	}
+}
+
+int	ft_stacksize(t_stack *lst)
+{
+	int	count;
+
+	count = 0;
+	if (!lst)
+		return (0);
+	while (lst)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }
