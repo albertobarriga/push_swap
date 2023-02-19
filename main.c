@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/19 01:43:39 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/19 15:40:50 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,24 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	i = argc;
-	ft_check_arg(argv, argc, &info);
+	ft_check_arg(argv, argc, &info, &stack_a);
 	if (argc > 2)
 	{
 		while (i > 1)
-			ft_init_stacks(&stack_a, ft_atol(argv[i-- - 1]));
+			ft_init_stacks(&stack_a, ft_atol(argv[i-- - 1], 2, &stack_a, &info));
 	}
 	else if (argc == 2)
 		ft_stack_string(argv, &stack_a, &info);
 	ft_init_order(stack_a);
+	ft_print_list_both_stacks_data(stack_a, stack_b);
 	ft_push_less3(&stack_a, &stack_b);
 	ft_recalculate_pos(stack_a, stack_b);
+	ft_print_list_both_stacks_data(stack_a, stack_b);
 	ft_order_3(&stack_a);
+	ft_print_list_both_stacks_data(stack_a, stack_b);
 	ft_recalculate_pos(stack_a, stack_b);
 	ft_target(stack_a, stack_b);
-	ft_cost(stack_a, stack_b);
-	ft_cost_abs(stack_b);
+	ft_recalculate_pos(stack_a, stack_b);
 	ft_order(&stack_a, &stack_b);
 }
 
@@ -96,9 +98,10 @@ void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info)
 	info->i = info->max_size;
 	while (info->i >= 0)
 	{
-		ft_init_stacks(stack_a, ft_atol(info->split_values[info->i]));
+		ft_init_stacks(stack_a, ft_atol(info->split_values[info->i], 1, stack_a, info));
 		info->i--;
 	}
+	//liberar el doble puntero
 }
 
 int	ft_count_arg(t_arg	*info)

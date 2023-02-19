@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/19 01:35:34 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/19 15:45:24 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,23 +55,31 @@ void	print_list(t_stack *first);
 
 void	ft_print_list_both_stacks_data(t_stack *stack_a, t_stack *stack_b);
 
-int		ft_atol(const char *str);
+int	ft_atol(const char *str, int flag, t_stack **stack_a, t_arg *info);
 
 void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info);
 
 int		ft_count_arg(t_arg	*info);
 
-void	ft_check_arg(char **argv, int argc, t_arg *info);
+void	ft_check_arg(char **argv, int argc, t_arg *info, t_stack **stack_a);
 
-void	ft_check_duplicate_string(t_arg	*info);
+int		ft_check_duplicate_string(t_arg	*info, t_stack **stack_a);
 
-void	ft_check_duplicate_args(char **argv);
+int		ft_check_duplicate_args(char **argv, t_stack **stack_a, t_arg *info);
 
-void	ft_error_input(void);
+// Free mem of stack and double char
 
-void	ft_check_num(char **argv);
+void	ft_free_stack(t_stack **stack);
 
-void	ft_check_atol(long res);
+char	**ft_free_mem(char **str);
+
+// void	ft_error_input(void);
+
+void	ft_str_fd(char *str, int fd);
+
+int		ft_check_num(char **argv);
+
+void	ft_check_atol(long res, int flag, t_stack **stack_a, t_arg *info);
 
 void	ft_init_order(t_stack *node);
 

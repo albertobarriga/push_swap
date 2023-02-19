@@ -6,13 +6,13 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:05:55 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/18 20:43:14 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/19 15:46:52 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atol(const char *str)
+int	ft_atol(const char *str, int flag, t_stack **stack_a, t_arg *info)
 {
 	long	s;
 	long	res;
@@ -35,14 +35,27 @@ int	ft_atol(const char *str)
 		i++;
 	}
 	res = res * s;
-	ft_check_atol(res);
+	ft_check_atol(res, flag, stack_a, info);
 	return ((int)res);
 }
 
-void	ft_check_atol(long res)
+void	ft_check_atol(long res, int flag, t_stack **stack_a, t_arg *info)
 {
-	if (res > INT_MAX)
-		ft_error_input();
-	if (res < INT_MIN)
-		ft_error_input();
+	if (flag == 1)
+	{
+		if (res > INT_MAX || res < INT_MIN)
+		{
+			ft_free_stack(stack_a);
+			ft_free_mem(info->split_values);
+			ft_str_fd("ERROR\n", 2);
+		}
+	}
+	else if (flag == 2)
+	{
+		if (res > INT_MAX || res < INT_MIN)
+		{
+			ft_free_stack(stack_a);
+			ft_str_fd("ERROR\n", 2);
+		}	
+	}
 }
