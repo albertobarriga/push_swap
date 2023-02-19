@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:38:07 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/18 20:42:44 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/19 21:42:17 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_rr(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_r(stack_a, 0);
 	ft_r(stack_b, 0);
-	printf("rr\n");
+	ft_printf("rr\n");
 }
 
 void	ft_rev_rot(t_stack	**stack, int ab)
@@ -71,5 +71,5 @@ void	ft_rev_rr(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_rev_rot(stack_a, 0);
 	ft_rev_rot(stack_b, 0);
-	printf("rrr\n");
+	ft_printf("rrr\n");
 }

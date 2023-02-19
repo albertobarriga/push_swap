@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/19 15:40:50 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/19 22:22:19 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,29 @@ int	main(int argc, char **argv)
 	}
 	else if (argc == 2)
 		ft_stack_string(argv, &stack_a, &info);
+	ft_push_swap(stack_a, stack_b);
+	// system("leaks push_swap");
+}
+
+void	ft_push_swap(t_stack *stack_a, t_stack *stack_b)
+{
+	if (ft_stacksize(stack_a) == 2)
+	{
+		ft_order_2(stack_a);
+		return ;
+	}
 	ft_init_order(stack_a);
-	ft_print_list_both_stacks_data(stack_a, stack_b);
+	//ft_print_list_both_stacks_data(stack_a, stack_b);
 	ft_push_less3(&stack_a, &stack_b);
 	ft_recalculate_pos(stack_a, stack_b);
-	ft_print_list_both_stacks_data(stack_a, stack_b);
+	//ft_print_list_both_stacks_data(stack_a, stack_b);
 	ft_order_3(&stack_a);
-	ft_print_list_both_stacks_data(stack_a, stack_b);
+	//ft_print_list_both_stacks_data(stack_a, stack_b);
 	ft_recalculate_pos(stack_a, stack_b);
 	ft_target(stack_a, stack_b);
 	ft_recalculate_pos(stack_a, stack_b);
 	ft_order(&stack_a, &stack_b);
+	//ft_print_list_both_stacks_data(stack_a, stack_b);
 }
 
 t_stack	*ft_init_stacks(t_stack **first, int value)

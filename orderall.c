@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:40:26 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/19 01:18:09 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/19 21:38:48 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,10 @@ void	ft_order(t_stack **stack_a, t_stack **stack_b)
 	{
 		ft_algorithm(stack_a, stack_b);
 		ft_recalculate_pos(*stack_a, *stack_b);
-		ft_print_list_both_stacks_data(*stack_a, *stack_b);
+		//ft_print_list_both_stacks_data(*stack_a, *stack_b);
 	}
 	ft_lap_numbers(stack_a);
-	ft_print_list_both_stacks_data(*stack_a, *stack_b);
+	//ft_print_list_both_stacks_data(*stack_a, *stack_b);
 }
 
 void	ft_lap_numbers(t_stack **stack_a)

@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/19 15:45:24 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/19 22:17:00 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct s_var
 	int		j;
 }				t_var;
 
-int		main(int argc, char **argv);
+void	ft_push_swap(t_stack *stack_a, t_stack *stack_b);
 
 t_stack	*ft_init_stacks(t_stack **first, int value);
 
@@ -124,6 +124,8 @@ void	ft_cost_abs(t_stack	*stack_b);
 // Algorithm to order the stacks
 
 void	ft_order_3(t_stack	**stack_a);
+
+void	ft_order_2(t_stack *stack_a);
 
 void	ft_push_less3(t_stack	**stack_a, t_stack	**stack_b);
 

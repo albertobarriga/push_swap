@@ -6,7 +6,7 @@
 /*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:47:19 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/19 14:50:40 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/19 22:18:01 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,12 @@ void	ft_push_less3(t_stack	**stack_a, t_stack	**stack_b)
 	while (ft_stacksize(*stack_a) > 3)
 		ft_push(stack_a, stack_b, 2);
 	ft_recalculate_pos(*stack_a, *stack_b);
+}
+
+void	ft_order_2(t_stack *stack_a)
+{
+	if (stack_a->value > stack_a->next->value)
+	{
+		ft_s(&stack_a, 1);
+	}
 }
