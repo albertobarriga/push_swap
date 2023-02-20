@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/19 22:37:01 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/20 13:37:30 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <limits.h>
 # include "libft/libft.h"
 # include "libft/printf/ft_printf.h"
+# include "libft/getnextline/get_next_line.h"
 
 typedef struct s_stack
 {
@@ -55,7 +56,7 @@ void	print_list(t_stack *first);
 
 void	ft_print_list_both_stacks_data(t_stack *stack_a, t_stack *stack_b);
 
-int	ft_atol(const char *str, int flag, t_stack **stack_a, t_arg *info);
+int		ft_atol(const char *str, int flag, t_stack **stack_a, t_arg *info);
 
 void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info);
 
@@ -136,5 +137,19 @@ void	ft_order(t_stack **stack_a, t_stack **stack_b);
 void	ft_lap_numbers(t_stack **stack_a);
 
 void	ft_init_variables_init_pos_ord(t_var *var);
+
+//Funcitions movements modified
+
+void	ft_ss_check(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_rr_check(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_rev_rr_check(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_checker(t_stack *stack_a, t_stack *stack_b);
+
+void	ft_check_order(t_stack *stack_a, t_stack *stack_b);
+
+void	ft_convert(t_stack *stack_a, t_stack *stack_b, char *inst);
 
 #endif

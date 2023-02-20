@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/19 22:41:46 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:07:47 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	else if (argc == 2)
 		ft_stack_string(argv, &stack_a, &info);
 	ft_push_swap(stack_a, stack_b);
-	// system("leaks push_swap");
+	//system("leaks push_swap");
 }
 
 void	ft_push_swap(t_stack *stack_a, t_stack *stack_b)

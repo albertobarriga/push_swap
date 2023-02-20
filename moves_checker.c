@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   moves_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 17:51:54 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/20 13:37:06 by abarriga         ###   ########.fr       */
+/*   Created: 2023/02/20 10:50:30 by abarriga          #+#    #+#             */
+/*   Updated: 2023/02/20 11:18:05 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+void	ft_ss_check(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_s(stack_a, 0);
+	ft_s(stack_b, 0);
+	ft_printf("ss\n");
+}
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
-# endif
+void	ft_rr_check(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_r(stack_a, 0);
+	ft_r(stack_b, 0);
+}
 
-char	*ft_read(int fd, char *str);
-char	*get_next_line(int fd);
-// char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strchr(const char *s, int c);
-size_t	ft_strlen(const char *s);
-char	*ft_line(char *str);
-char	*ft_str(char *str);
-#endif
+void	ft_rev_rr_check(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_rev_rot(stack_a, 0);
+	ft_rev_rot(stack_b, 0);
+}
+
