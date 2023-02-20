@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_arg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:17:11 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/19 15:45:50 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/20 15:49:24 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,8 @@ int	ft_check_duplicate_args(char **argv, t_stack **stack_a, t_arg *info)
 		j = 1;
 		while (argv[j])
 		{
-			if (ft_atol(argv[i], 2, stack_a, info) == ft_atol(argv[j], 2, stack_a, info) && j != i)
+			if (ft_atol(argv[i], 2, stack_a, info)
+				== ft_atol(argv[j], 2, stack_a, info) && j != i)
 				return (0);
 			j++;
 		}
