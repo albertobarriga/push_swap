@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 22:33:50 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/21 13:21:27 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:57:33 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	i = argc;
+	if (i == 1)
+		return (0);
 	//ft_printf("ESTA EN EL CHECKEER");
 	ft_check_arg(argv, argc, &info, &stack_a);
 	if (argc > 2)
@@ -53,6 +55,11 @@ void	ft_checker(t_stack **stack_a, t_stack **stack_b)
 {
 	char	*inst;
 
+	if (ft_check_order(*stack_a, *stack_b) == 1)
+	{
+		ft_printf("OK\n");
+		exit (1);
+	}
 	while (1)
 	{
 		inst = get_next_line(0);
@@ -71,33 +78,35 @@ void	ft_checker(t_stack **stack_a, t_stack **stack_b)
 	// ft_print_list_both_stacks_data(*stack_a, *stack_b);
 	if (ft_check_order(*stack_a, *stack_b) == 1)
 		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
 }
 
 int	ft_convert(t_stack **stack_a, t_stack **stack_b, char *inst)
 {
 	// ft_printf("getnexline dentro de convert=%s\n", inst);
 	if (ft_strncmp(inst, "sa\n", 5) == 0)
-		return (ft_s(stack_a, 0), 1);
+		return (ft_s_check(stack_a));
 	else if (ft_strncmp(inst, "sb\n", 5) == 0)
-		return (ft_s(stack_b, 0), 1);
+		return (ft_s_check(stack_b));
 	else if (ft_strncmp(inst, "ss\n", 5) == 0)
-		return (ft_ss_check(stack_a, stack_b), 1);
+		return (ft_ss_check(stack_a, stack_b));
 	else if (ft_strncmp(inst, "pa\n", 5) == 0)
-		return (ft_push(stack_b, stack_a, 0), 1);
+		return (ft_push_check(stack_b, stack_a));
 	else if (ft_strncmp(inst, "pb\n", 5) == 0)
-		return (ft_push(stack_a, stack_b, 0), 1);
+		return (ft_push_check(stack_a, stack_b));
 	else if (ft_strncmp(inst, "ra\n", 5) == 0)
-		return (ft_r(stack_a, 0), 1);
+		return (ft_r_check(stack_a));
 	else if (ft_strncmp(inst, "rb\n", 5) == 0)
-		return (ft_r(stack_b, 0), 1);
+		return (ft_r_check(stack_b));
 	else if (ft_strncmp(inst, "rr\n", 5) == 0)
 		return (ft_rr_check(stack_a, stack_b), 1);
 	else if (ft_strncmp(inst, "rra\n", 5) == 0)
-		return (ft_rev_rot(stack_a, 0), 1);
+		return (ft_rev_rot_check(stack_a));
 	else if (ft_strncmp(inst, "rrb\n", 5) == 0)
-		return (ft_rev_rot(stack_b, 0), 1);
+		return (ft_rev_rot_check(stack_b));
 	else if (ft_strncmp(inst, "rrr\n", 5) == 0)
-		return (ft_rev_rr_check(stack_a, stack_b), 1);
+		return (ft_rev_rr_check(stack_a, stack_b));
 	else
 		return (0);
 }
@@ -109,21 +118,12 @@ int	ft_check_order(t_stack *stack_a, t_stack *stack_b)
 		while (stack_a && stack_a->next)
 		{
 			if (stack_a->value > stack_a->next->value)
-			{
-				ft_printf("ha entrad en fallo");
-				ft_printf("\nKO\n");
 				return (0);
-				//exit (0);
-			}
 			stack_a = stack_a->next;
 		}
-		//ft_printf("OK\n");
 	}
 	else
-	{
-		ft_printf("\nKO\n");
 		return (0);
-	}
 	return (1);
 }
 

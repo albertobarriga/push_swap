@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/21 12:24:06 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:41:23 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,11 +140,19 @@ void	ft_init_variables_init_pos_ord(t_var *var);
 
 //Funcitions movements modified
 
-void	ft_ss_check(t_stack **stack_a, t_stack **stack_b);
+int		ft_ss_check(t_stack **stack_a, t_stack **stack_b);
 
-void	ft_rr_check(t_stack **stack_a, t_stack **stack_b);
+int		ft_rr_check(t_stack **stack_a, t_stack **stack_b);
 
-void	ft_rev_rr_check(t_stack **stack_a, t_stack **stack_b);
+int		ft_rev_rr_check(t_stack **stack_a, t_stack **stack_b);
+
+int		ft_s_check(t_stack **stack_a);
+
+int		ft_r_check(t_stack	**stack);
+
+int		ft_rev_rot_check(t_stack	**stack);
+
+int		ft_push_check(t_stack **stack_out, t_stack **stack_in);
 
 void	ft_checker(t_stack **stack_a, t_stack **stack_b);
 

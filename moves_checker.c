@@ -6,36 +6,68 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:50:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/21 13:53:17 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:43:00 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_ss_check(t_stack **stack_a, t_stack **stack_b)
+int	ft_ss_check(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_s(stack_a, 0);
-	ft_s(stack_b, 0);
+	if (ft_s_check(stack_a) == 0)
+		return (0);
+	if (ft_s_check(stack_b) == 0)
+		return (0);
+	return (1);
 }
 
-void	ft_rr_check(t_stack **stack_a, t_stack **stack_b)
+int	ft_rr_check(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_r(stack_a, 0);
-	ft_r(stack_b, 0);
+	if (ft_r_check(stack_a) == 0)
+		return (0);
+	if (ft_r_check(stack_b) == 0)
+		return (0);
+	return (1);
 }
 
-void	ft_rev_rr_check(t_stack **stack_a, t_stack **stack_b)
+int	ft_rev_rr_check(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_rev_rot(stack_a, 0);
-	ft_rev_rot(stack_b, 0);
+	if (ft_rev_rot_check(stack_a) == 0)
+		return (0);
+	if (ft_rev_rot_check(stack_b) == 0)
+		return (0);
+	return (1);
 }
 
-void	ft_s_check(t_stack **stack, int ab)
+int	ft_s_check(t_stack **stack)
 {
 	t_stack	*temp;
 
+	if (*stack == NULL)
+		return (0);
 	temp = (*stack)->next;
 	(*stack)->next = (*stack)->next->next;
 	temp->next = (*stack);
 	(*stack) = temp;
+	return (1);
+}
+
+int	ft_r_check(t_stack	**stack)
+{
+	t_stack	*temp;
+	t_stack	*last;
+
+	if (*stack == NULL)
+		return (0);
+	if ((*stack) && (*stack)->next)
+	{
+		temp = (*stack)->next;
+		last = ft_last_stack(*stack);
+		last->next = (*stack);
+		last = last->next;
+		last->next = NULL;
+		*stack = temp;
+		return (1);
+	}
+	return (0);
 }

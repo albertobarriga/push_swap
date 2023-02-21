@@ -13,6 +13,7 @@ SRCS = main.c \
 SRCS_CHECKER =	checker.c \
 				ft_check_arg.c \
 				moves_checker.c \
+				moves_checker2.c \
 				utils_checker.c \
 				atol.c \
 				ft_error.c \
