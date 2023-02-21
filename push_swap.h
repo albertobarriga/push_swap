@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/20 13:37:30 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/21 12:24:06 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,10 +146,10 @@ void	ft_rr_check(t_stack **stack_a, t_stack **stack_b);
 
 void	ft_rev_rr_check(t_stack **stack_a, t_stack **stack_b);
 
-void	ft_checker(t_stack *stack_a, t_stack *stack_b);
+void	ft_checker(t_stack **stack_a, t_stack **stack_b);
 
-void	ft_check_order(t_stack *stack_a, t_stack *stack_b);
+int		ft_check_order(t_stack *stack_a, t_stack *stack_b);
 
-void	ft_convert(t_stack *stack_a, t_stack *stack_b, char *inst);
+int		ft_convert(t_stack **stack_a, t_stack **stack_b, char *inst);
 
 #endif

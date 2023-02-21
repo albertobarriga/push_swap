@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:50:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/20 17:11:16 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:53:17 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_ss_check(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_s(stack_a, 0);
 	ft_s(stack_b, 0);
-	ft_printf("ss\n");
 }
 
 void	ft_rr_check(t_stack **stack_a, t_stack **stack_b)
@@ -29,4 +28,14 @@ void	ft_rev_rr_check(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_rev_rot(stack_a, 0);
 	ft_rev_rot(stack_b, 0);
+}
+
+void	ft_s_check(t_stack **stack, int ab)
+{
+	t_stack	*temp;
+
+	temp = (*stack)->next;
+	(*stack)->next = (*stack)->next->next;
+	temp->next = (*stack);
+	(*stack) = temp;
 }
