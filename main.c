@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/20 16:33:36 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:13:29 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,28 @@ int	main(int argc, char **argv)
 	}
 	else if (argc == 2)
 		ft_stack_string(argv, &stack_a, &info);
-	ft_push_swap(stack_a, stack_b);
-	//system("leaks push_swap");
+	ft_push_swap(&stack_a, &stack_b);
+	// printf("stack_a: %p\n", stack_a);
+	ft_free_stack(&stack_a);
+	ft_free_stack(&stack_b);
+	// system("leaks push_swap");
 }
 
-void	ft_push_swap(t_stack *stack_a, t_stack *stack_b)
+void	ft_push_swap(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_stacksize(stack_a) == 2)
+	if (ft_stacksize(*stack_a) == 2)
 	{
-		ft_order_2(stack_a);
+		ft_order_2(*stack_a);
 		return ;
 	}
-	ft_init_order(stack_a);
-	ft_push_less3(&stack_a, &stack_b);
-	ft_recalculate_pos(stack_a, stack_b);
-	ft_order_3(&stack_a);
-	ft_recalculate_pos(stack_a, stack_b);
-	ft_target(stack_a, stack_b);
-	ft_recalculate_pos(stack_a, stack_b);
-	ft_order(&stack_a, &stack_b);
+	ft_init_order(*stack_a);
+	ft_push_less3(stack_a, stack_b);
+	ft_recalculate_pos(*stack_a, *stack_b);
+	ft_order_3(stack_a);
+	ft_recalculate_pos(*stack_a, *stack_b);
+	ft_target(*stack_a, *stack_b);
+	ft_recalculate_pos(*stack_a, *stack_b);
+	ft_order(stack_a, stack_b);
 }
 
 t_stack	*ft_init_stacks(t_stack **first, int value)
@@ -92,8 +95,7 @@ void	ft_print_list_both_stacks_data(t_stack *stack_a, t_stack *stack_b)
 			ft_printf("                                   		|");
 		if (stack_b)
 		{
-			// ft_printf("Value: %d; Pos: %d , Final index:%d, Target:%d", stack_b->value, stack_b->pos_r, stack_b->index, stack_b->targ_pos);
-			ft_printf("imprime  %i  ->pos_r= %i  ->index= %i   ->target= %i   ->costa= %i   ->costb= %i  ->costabs= %i", stack_b->value, stack_b->pos_r, stack_b->index, stack_b->targ_pos, stack_b->costa, stack_b->costb, stack_b->cost_abs);
+			ft_printf("imprime  %i  ->pos_r= %i  ->index= %i   ->target= %i  ->costa= %i   ->costb= %i  ->costabs= %i", stack_b->value, stack_b->pos_r, stack_b->index, stack_b->targ_pos, stack_b->costa, stack_b->costb, stack_b->cost_abs);
 			stack_b = stack_b->next;
 		}
 		ft_printf("\n");
@@ -110,7 +112,7 @@ void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info)
 		ft_init_stacks(stack_a, ft_atol(info->split_values[info->i], 1, stack_a, info));
 		info->i--;
 	}
-	//liberar el doble puntero
+	ft_free_mem(info->split_values);
 }
 
 int	ft_count_arg(t_arg	*info)

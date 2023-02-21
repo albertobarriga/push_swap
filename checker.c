@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 22:33:50 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/21 16:57:33 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:04:50 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,24 +58,22 @@ void	ft_checker(t_stack **stack_a, t_stack **stack_b)
 	if (ft_check_order(*stack_a, *stack_b) == 1)
 	{
 		ft_printf("OK\n");
-		exit (1);
+		exit (0);
 	}
 	while (1)
 	{
 		inst = get_next_line(0);
 		if (!inst)
 			break ;
-		ft_printf("getnexline=%s\n", inst);
 		if (ft_convert(stack_a, stack_b, inst) == 0)
 		{
 			ft_printf("KO\n");
-			exit (1);
+			exit (0);
 			//free(inst);
 		}
 		// ft_print_list_both_stacks_data(*stack_a, *stack_b);
 		//free(inst);
 	}
-	// ft_print_list_both_stacks_data(*stack_a, *stack_b);
 	if (ft_check_order(*stack_a, *stack_b) == 1)
 		ft_printf("OK\n");
 	else
@@ -84,7 +82,6 @@ void	ft_checker(t_stack **stack_a, t_stack **stack_b)
 
 int	ft_convert(t_stack **stack_a, t_stack **stack_b, char *inst)
 {
-	// ft_printf("getnexline dentro de convert=%s\n", inst);
 	if (ft_strncmp(inst, "sa\n", 5) == 0)
 		return (ft_s_check(stack_a));
 	else if (ft_strncmp(inst, "sb\n", 5) == 0)

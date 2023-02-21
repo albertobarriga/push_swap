@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 18:33:15 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/19 15:36:51 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/21 17:23:06 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* void	ft_error_input(void)
-{
-	ft_printf("El programa se ha acabado por un error en la entrada");
-	exit(-1);
-} */
 
 void	ft_str_fd(char *str, int fd)
 {

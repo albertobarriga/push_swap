@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/21 16:41:23 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:09:42 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_var
 	int		j;
 }				t_var;
 
-void	ft_push_swap(t_stack *stack_a, t_stack *stack_b);
+void	ft_push_swap(t_stack **stack_a, t_stack **stack_b);
 
 t_stack	*ft_init_stacks(t_stack **first, int value);
 

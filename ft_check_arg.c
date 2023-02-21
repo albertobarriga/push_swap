@@ -6,30 +6,11 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:17:11 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/20 15:49:24 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:22:09 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* void	ft_check_arg(char **argv, int argc, t_arg *info)
-{
-	if (argc < 2)
-		ft_str_fd("ERROR\n", 2);
-	else if (argc == 2)
-	{
-		info->split_values = ft_split(argv[1], ' ');
-		info->max_size = ft_count_arg(info) - 1;
-		info->i = info->max_size;
-		ft_check_num(info->split_values);
-		ft_check_duplicate_string(info);
-	}
-	else
-	{
-		ft_check_num(&argv[1]);
-		ft_check_duplicate_args(argv);
-	}
-} */
 
 void	ft_check_arg(char **argv, int argc, t_arg *info, t_stack **stack_a)
 {
