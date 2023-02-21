@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:44:15 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/20 17:11:28 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:36:56 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info)
 	info->i = info->max_size;
 	while (info->i >= 0)
 	{
-		ft_init_stacks(stack_a, ft_atol(info->split_values[info->i], 1, stack_a, info));
+		ft_init_stacks(stack_a, ft_atol(info->split_values[info->i],
+				1, stack_a, info));
 		info->i--;
 	}
 	//liberar el doble puntero

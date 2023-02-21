@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/21 18:16:22 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:37:37 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,18 +67,6 @@ t_stack	*ft_init_stacks(t_stack **first, int value)
 	return (*first);
 }
 
-/* void	print_list(t_stack *first)
-{
-	ft_printf("entra\n");
-	while (first)
-	{
-		ft_printf("imprime  %i  ->pos_r= %i  ->index= %i   ->target= %i   ->costa= %i   ->costb= %i  ->costabs= %i\n", first->value, first->pos_r, first->index, first->targ_pos, first->costa, first->costb, first->cost_abs);
-		first = first->next;
-	}
-	// ft_printf("imprime  %i  ->pos_r= %i  ->index= %i\n", first->value, first->last_pos, first->index);
-	// ft_printf("imprime  %i\n", first->value);
-} */
-
 void	ft_print_list_both_stacks_data(t_stack *stack_a, t_stack *stack_b)
 {
 	ft_printf("STACK INFORMATION:\n");
@@ -108,18 +96,9 @@ void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info)
 	info->i = info->max_size;
 	while (info->i >= 0)
 	{
-		ft_init_stacks(stack_a, ft_atol(info->split_values[info->i], 1, stack_a, info));
+		ft_init_stacks(stack_a, ft_atol(info->split_values[info->i],
+				1, stack_a, info));
 		info->i--;
 	}
 	ft_free_mem(info->split_values);
-}
-
-int	ft_count_arg(t_arg	*info)
-{
-	int		i;
-
-	i = 0;
-	while (info->split_values[i])
-		i++;
-	return (i);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   orderall.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:40:26 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/19 22:32:30 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/21 20:26:19 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	ft_lap_numbers(t_stack **stack_a)
 	{
 		while (stack->index != 1)
 			stack = stack->next;
-		if (stack->pos_r < ((len - 1) / 2))
+		if (stack->pos_r <= ((len - 1) / 2))
 		{
 			i = stack->pos_r;
 			while (i-- != 0)

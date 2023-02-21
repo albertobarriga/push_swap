@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   target.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alberto <alberto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 19:33:43 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/19 14:48:51 by alberto          ###   ########.fr       */
+/*   Updated: 2023/02/21 20:38:06 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,14 @@ void	ft_recalculate_pos(t_stack	*stack_a, t_stack	*stack_b)
 	ft_init_pos_r(stack_b);
 	ft_cost(stack_a, stack_b);
 	ft_cost_abs(stack_b);
+}
+
+int	ft_count_arg(t_arg	*info)
+{
+	int		i;
+
+	i = 0;
+	while (info->split_values[i])
+		i++;
+	return (i);
 }

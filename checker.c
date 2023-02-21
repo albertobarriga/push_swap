@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 22:33:50 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/21 17:04:50 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:33:34 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int argc, char **argv)
 	i = argc;
 	if (i == 1)
 		return (0);
-	//ft_printf("ESTA EN EL CHECKEER");
 	ft_check_arg(argv, argc, &info, &stack_a);
 	if (argc > 2)
 	{
@@ -35,21 +34,8 @@ int	main(int argc, char **argv)
 	else if (argc == 2)
 		ft_stack_string(argv, &stack_a, &info);
 	ft_checker(&stack_a, &stack_b);
+	system("leaks checker");
 }
-
-// void	ft_checker(t_stack *stack_a, t_stack *stack_b)
-// {
-// 	char	*inst;
-
-// 	inst = get_next_line(0);
-// 	while (inst != NULL)
-// 	{
-// 		ft_convert(stack_a, stack_b, inst);
-// 		inst = get_next_line(0);
-// 	}
-// 	if (ft_check_order(stack_a, stack_b) == 0)
-// 		ft_printf("\nOK\n");
-// }
 
 void	ft_checker(t_stack **stack_a, t_stack **stack_b)
 {
