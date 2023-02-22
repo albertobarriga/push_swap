@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 22:33:50 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/22 16:41:25 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:19:18 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ int	main(int argc, char **argv)
 	system("leaks checker");
 }
 
-t_list	*ft_read_moves(t_list *inst)
+t_list	*ft_read_moves(void)
 {
+	t_list	*inst;
+
 	inst = ft_lstnew((char *)get_next_line(0));
 	while (ft_lstlast(inst)->content)
 		ft_lstadd_back(&inst, ft_lstnew((char *)get_next_line(0)));
@@ -52,10 +54,9 @@ void	ft_checker(t_stack **stack_a, t_stack **stack_b)
 	t_list	*inst;
 
 	i = 0;
-	inst = NULL;
-	inst = ft_read_moves(inst);
+	inst = ft_read_moves();
 	temp = inst;
-	while (temp->content)
+	while (temp && temp->content)
 	{
 		if (ft_convert(stack_a, stack_b, temp->content, inst) == 0)
 		{
@@ -64,8 +65,8 @@ void	ft_checker(t_stack **stack_a, t_stack **stack_b)
 			exit (0);
 		}
 		temp = temp->next;
-		ft_lstclear(&inst, free);
 	}
+	ft_lstclear(&inst, free);
 	if (ft_check_order(*stack_a, *stack_b) == 1)
 		ft_printf("OK\n");
 	else
@@ -74,7 +75,7 @@ void	ft_checker(t_stack **stack_a, t_stack **stack_b)
 
 int	ft_error_check(t_stack *stack_a, t_stack *stack_b, t_list *inst)
 {
-	ft_printf("ERROR\n");
+	ft_str_fd("ERROR\n", 2);
 	ft_lstclear(&inst, free);
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);

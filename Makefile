@@ -60,6 +60,7 @@ clean:
 	$(RM) ${OBJ} ${OBJ_CHECKER}
 	@make clean -C $(LIB_DIR)
 fclean:	clean
+	@make fclean -C $(LIB_DIR)
 	${RM} ${NAME}
 	${RM} ${CHECKER}
 	$(RM) $(LIB)

@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/22 16:37:36 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:18:57 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,9 @@ typedef struct s_var
 	int		j;
 }				t_var;
 
-// typedef struct s_check
-// {
-// 	char			*order;
-// 	struct s_stack	*next;
-// }					t_check;
-
 void	ft_push_swap(t_stack **stack_a, t_stack **stack_b);
 
 t_stack	*ft_init_stacks(t_stack **first, int value);
-
-//void	print_list(t_stack *first);
-
-//void	ft_print_list_both_stacks_data(t_stack *stack_a, t_stack *stack_b);
 
 int		ft_atol(const char *str, int flag, t_stack **stack_a, t_arg *info);
 
@@ -168,6 +158,6 @@ int		ft_convert(t_stack **stack_a, t_stack **stack_b, char *inst, t_list *h);
 
 int		ft_error_check(t_stack *stack_a, t_stack *stack_b, t_list *inst);
 
-t_list	*ft_read_moves(t_list *inst);
+t_list	*ft_read_moves(void);
 
 #endif
