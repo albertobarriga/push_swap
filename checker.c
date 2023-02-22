@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 22:33:50 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/21 20:33:34 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:01:51 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,10 @@ void	ft_checker(t_stack **stack_a, t_stack **stack_b)
 		if (ft_convert(stack_a, stack_b, inst) == 0)
 		{
 			ft_printf("KO\n");
+			free(inst);
 			exit (0);
-			//free(inst);
 		}
-		// ft_print_list_both_stacks_data(*stack_a, *stack_b);
-		//free(inst);
+		free(inst);
 	}
 	if (ft_check_order(*stack_a, *stack_b) == 1)
 		ft_printf("OK\n");
@@ -110,25 +109,25 @@ int	ft_check_order(t_stack *stack_a, t_stack *stack_b)
 	return (1);
 }
 
-void	ft_print_list_both_stacks_data(t_stack *stack_a, t_stack *stack_b)
-{
-	ft_printf("STACK INFORMATION:\n");
-	while (stack_a != NULL || stack_b != NULL)
-	{
-		if (stack_a)
-		{
-			ft_printf("Value: %d; Pos: %d , Final index:%d		|",
-				stack_a->value, stack_a->pos_r, stack_a->index);
-			stack_a = stack_a->next;
-		}
-		else
-			ft_printf("                                   		|");
-		if (stack_b)
-		{
-			// ft_printf("Value: %d; Pos: %d , Final index:%d, Target:%d", stack_b->value, stack_b->pos_r, stack_b->index, stack_b->targ_pos);
-			ft_printf("imprime  %i  ->pos_r= %i  ->index= %i   ->target= %i   ->costa= %i   ->costb= %i  ->costabs= %i", stack_b->value, stack_b->pos_r, stack_b->index, stack_b->targ_pos, stack_b->costa, stack_b->costb, stack_b->cost_abs);
-			stack_b = stack_b->next;
-		}
-		ft_printf("\n");
-	}
-}
+// void	ft_print_list_both_stacks_data(t_stack *stack_a, t_stack *stack_b)
+// {
+// 	ft_printf("STACK INFORMATION:\n");
+// 	while (stack_a != NULL || stack_b != NULL)
+// 	{
+// 		if (stack_a)
+// 		{
+// 			ft_printf("Value: %d; Pos: %d , Final index:%d		|",
+// 				stack_a->value, stack_a->pos_r, stack_a->index);
+// 			stack_a = stack_a->next;
+// 		}
+// 		else
+// 			ft_printf("                                   		|");
+// 		if (stack_b)
+// 		{
+// 			// ft_printf("Value: %d; Pos: %d , Final index:%d, Target:%d", stack_b->value, stack_b->pos_r, stack_b->index, stack_b->targ_pos);
+// 			ft_printf("imprime  %i  ->pos_r= %i  ->index= %i   ->target= %i   ->costa= %i   ->costb= %i  ->costabs= %i", stack_b->value, stack_b->pos_r, stack_b->index, stack_b->targ_pos, stack_b->costa, stack_b->costb, stack_b->cost_abs);
+// 			stack_b = stack_b->next;
+// 		}
+// 		ft_printf("\n");
+// 	}
+// }
