@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/21 20:37:37 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:04:09 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	main(int argc, char **argv)
 	ft_push_swap(&stack_a, &stack_b);
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
-	// system("leaks push_swap");
 }
 
 void	ft_push_swap(t_stack **stack_a, t_stack **stack_b)
@@ -65,28 +64,6 @@ t_stack	*ft_init_stacks(t_stack **first, int value)
 	new_node->next = *first;
 	*first = new_node;
 	return (*first);
-}
-
-void	ft_print_list_both_stacks_data(t_stack *stack_a, t_stack *stack_b)
-{
-	ft_printf("STACK INFORMATION:\n");
-	while (stack_a != NULL || stack_b != NULL)
-	{
-		if (stack_a)
-		{
-			ft_printf("Value: %d; Pos: %d , Final index:%d		|",
-				stack_a->value, stack_a->pos_r, stack_a->index);
-			stack_a = stack_a->next;
-		}
-		else
-			ft_printf("                                   		|");
-		if (stack_b)
-		{
-			ft_printf("imprime  %i  ->pos_r= %i  ->index= %i   ->target= %i  ->costa= %i   ->costb= %i  ->costabs= %i", stack_b->value, stack_b->pos_r, stack_b->index, stack_b->targ_pos, stack_b->costa, stack_b->costb, stack_b->cost_abs);
-			stack_b = stack_b->next;
-		}
-		ft_printf("\n");
-	}
 }
 
 void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info)

@@ -57,7 +57,7 @@ $(CHECKER): $(OBJ_CHECKER)
 	$(CC) -o $(CHECKER) $(OBJ_CHECKER) $(LIB)
 
 clean:
-	$(RM) ${OBJ}
+	$(RM) ${OBJ} ${OBJ_CHECKER}
 	@make clean -C $(LIB_DIR)
 fclean:	clean
 	${RM} ${NAME}
