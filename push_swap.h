@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/22 18:18:57 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:27:31 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ int		ft_check_duplicate_args(char **argv, t_stack **stack_a, t_arg *info);
 void	ft_free_stack(t_stack **stack);
 
 char	**ft_free_mem(char **str);
-
-// void	ft_error_input(void);
 
 void	ft_str_fd(char *str, int fd);
 

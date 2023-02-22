@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:17:11 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/21 17:22:09 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:38:46 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	ft_check_arg(char **argv, int argc, t_arg *info, t_stack **stack_a)
 {
-	if (argc < 2)
-		ft_str_fd("ERROR\n", 2);
-	else if (argc == 2)
+	if (argc == 2)
 	{
 		info->split_values = ft_split(argv[1], ' ');
 		info->max_size = ft_count_arg(info) - 1;
 		info->i = info->max_size;
+		if (info->max_size == 0)
+			exit(0);
 		if (ft_check_num(info->split_values) == 0
 			|| ft_check_duplicate_string(info, stack_a) == 0)
 		{

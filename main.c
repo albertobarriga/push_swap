@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/22 11:04:09 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:40:37 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	i = argc;
+	if (argc < 2)
+		exit(0);
 	ft_check_arg(argv, argc, &info, &stack_a);
 	if (argc > 2)
 	{

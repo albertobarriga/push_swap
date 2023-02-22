@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 22:33:50 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/22 18:19:18 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:38:05 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	main(int argc, char **argv)
 	else if (argc == 2)
 		ft_stack_string(argv, &stack_a, &info);
 	ft_checker(&stack_a, &stack_b);
-	system("leaks checker");
 }
 
 t_list	*ft_read_moves(void)
