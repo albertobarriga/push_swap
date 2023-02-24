@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:17:11 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/23 12:29:07 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/24 19:19:18 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_check_arg(char **argv, int argc, t_arg *info, t_stack **stack_a)
 		info->max_size = ft_count_arg(info) - 1;
 		info->i = info->max_size;
 		if (info->max_size == 0)
-			exit(0);
+			ft_arg_alone(1, stack_a, info);	
 		if (ft_check_num(info->split_values) == 0
 			|| ft_check_duplicate_string(info, stack_a) == 0)
 		{
@@ -40,12 +40,23 @@ void	ft_check_arg(char **argv, int argc, t_arg *info, t_stack **stack_a)
 	}
 }
 
+void	ft_arg_alone(int flag, t_stack **stack_a, t_arg *info)
+{
+	(void)flag;
+	if (ft_check_num(info->split_values) == 0)
+		ft_str_fd("Error\n", 2);
+	ft_atol(info->split_values[0], 1, stack_a, info);
+	exit(0);
+}
+
 int	ft_check_num(char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 0;
+	if (argv[0] == NULL)
+		exit(0);
 	while (argv[i])
 	{
 		j = 0;

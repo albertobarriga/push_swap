@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:44 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/22 20:27:31 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/24 19:16:46 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,5 +157,7 @@ int		ft_convert(t_stack **stack_a, t_stack **stack_b, char *inst, t_list *h);
 int		ft_error_check(t_stack *stack_a, t_stack *stack_b, t_list *inst);
 
 t_list	*ft_read_moves(void);
+
+void	ft_arg_alone(int flag, t_stack **stack_a, t_arg *info);
 
 #endif
