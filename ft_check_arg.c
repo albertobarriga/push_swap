@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:17:11 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/22 20:38:46 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/23 12:29:07 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,7 @@ int	ft_check_num(char **argv)
 		while (argv[i][j])
 		{
 			if (j == 0 && argv[i][0] == '-' && argv[i][1])
-			{
-				if (argv[i][1] == '0')
-					return (0);
 				j++;
-			}
 			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
 				return (0);
 			j++;
