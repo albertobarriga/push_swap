@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 22:33:50 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/22 18:38:05 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/24 19:26:13 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,3 +97,4 @@ int	ft_check_order(t_stack *stack_a, t_stack *stack_b)
 		return (0);
 	return (1);
 }
+

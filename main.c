@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:04:30 by abarriga          #+#    #+#             */
-/*   Updated: 2023/02/22 20:40:37 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/02/24 19:24:35 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	main(int argc, char **argv)
 	}
 	else if (argc == 2)
 		ft_stack_string(argv, &stack_a, &info);
+	if (ft_check_order(stack_a, stack_b) == 1)
+		exit(0);
 	ft_push_swap(&stack_a, &stack_b);
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
@@ -80,4 +82,20 @@ void	ft_stack_string(char **argv, t_stack **stack_a, t_arg *info)
 		info->i--;
 	}
 	ft_free_mem(info->split_values);
+}
+
+int	ft_check_order(t_stack *stack_a, t_stack *stack_b)
+{
+	if (stack_b == NULL)
+	{
+		while (stack_a && stack_a->next)
+		{
+			if (stack_a->value > stack_a->next->value)
+				return (0);
+			stack_a = stack_a->next;
+		}
+	}
+	else
+		return (0);
+	return (1);
 }
